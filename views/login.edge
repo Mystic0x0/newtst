@@ -1,104 +1,37 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
+@layout('layouts.app')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign in to your account</title>
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/jquery.js"></script>
-</head>
+@section('content')
+<div class="cb-login-static-alert cb-login-message cb-login-alert-message cb-loginFormArea"></div>
 
-<body class="cb" style="margin: 0;padding: 0;">
-  <form name="emailForm" id="emailForm" method="post" action="/auth/login" class="main-form provide-min-height">
-    <div class="login-paginated-page">
-      <div class="background-image-holder">
-        <div id="backgroundImage" class="background-image ext-background-image" style="background-image: url('/img/hero_bg.svg');"></div>
-      </div>
+<div class="cb-login-form cb-loginFormArea">
+  <form class="cb-form" action="/auth/login" method="POST">
+    <div class="field">
+      <label class="cb-login-field" for="username">Login ID</label>
+      <input id="username" name="username" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
 
-      <div class="outer">
-        <div class="template-section main-section">
-          <div class="middle ext-middle">
-            <div class="full-height">
-              <div class="flex-column">
-                <div class="win-scroll">
-                  <div id="lightbox" class="sign-in-box ext-sign-in-box fade-in-lightbox has-popup">
-                    <div class="lightbox-cover"></div>
-                    <div>
-                      <img class="logo" role="img" src="/img/logo.svg" alt="Microsoft">
-                    </div>
+    <div class="field">
+      <label class="cb-login-field" for="password">Password</label>
+      <input id="password" name="password" class="mrg-T-sm form-control cb-text-field cb-text-field-mask" type="password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
 
-                    <div role="main">
-                      <div class="pagination-view animate slide-in-back">
-                        <div class="row title ext-title" id="loginHeader">
-                          <div role="heading">Sign in</div>
-                        </div>
+    <div id="userLinks">
+      <div id="rememberUserNameArea">
+        <div class="ui-checkbox">
+          <input class="sr-only" id="ckbRememberUser" type="checkbox">
 
-                        <div class="row">
-                          <div role="alert"></div>
-
-                          <div class="form-group col-md-24">
-                            <div class="error ext-error" style="display: none;">Please enter a valid email address.</div>
-                            
-                            <div class="placeholderContainer">
-                              <input type="text" name="email" id="email" maxlength="113" class="form-control ltr_override input ext-input text-box ext-text-box" placeholder="Email address" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="position-buttons password-reset-links-container ext-password-reset-links-container">
-                          <div class="row">
-                            <div class="col-md-24">
-                              <div class="text-13">
-                                <div class="form-group">
-                                  No account?
-                                  <a href="https://login.live.com/oauth20_authorize.srf" id="signup">Create one!</a>
-                                </div>
-
-                                <div class="form-group">
-                                  <a id="cantAccessAccount" name="cannotAccessAccount" href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize">Can’t access your account?</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="win-button-pin-bottom">
-                          <div class="row">
-                            <div class="col-xs-24 no-padding-left-right button-container button-field-container ext-button-field-container">
-                              <div class="inline-block button-item ext-button-item">
-                                <input type="button" id="backButton" class="win-button button-secondary button ext-button secondary ext-secondary" value="Back">
-                              </div>
-
-                              <div class="inline-block button-item ext-button-item">
-                                <input type="submit" id="emailSubmitButton" class="win-button button_primary button ext-button primary ext-primary" value="Next">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <label for="ckbRememberUser">
+            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20"><rect fill="none" stroke="none" stroke-width="2" x="1" y="1" width="18" height="18" rx="3"></rect><polyline fill="none" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4 11.4390244 7.44978307 15.0611808 16 5"></polyline></svg>
+            Remember me
+          </label>
         </div>
       </div>
 
-      <div id="footer" role="contentinfo" class="footer ext-footer">
-        <div id="footerLinks" class="footerNode text-secondary footer-links ext-footer-links">
-          <a id="ftrTerms" href="https://www.microsoft.com/en-US/servicesagreement/" class="footer-content ext-footer-content footer-item ext-footer-item">Terms of use</a>
-          <a id="ftrPrivacy" href="https://privacy.microsoft.com/en-US/privacystatement" class="footer-content ext-footer-content footer-item ext-footer-item">Privacy &amp; cookies</a>
-          <a id="moreOptions" href="javascript:void(0)" role="button" class="footer-content ext-footer-content footer-item ext-footer-item debug-item ext-debug-item">...</a>
-        </div>
-      </div>
+      <button class="logon-submit btn-primary btn-block pointer btn disabled" disabled="">
+        <div class="icon"></div>
+        Log In
+      </button>
     </div>
   </form>
-  
-  <script src="/js/main.js"></script>
-</body>
-
-</html>
+</div>
+@endsection
