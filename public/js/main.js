@@ -1,39 +1,37 @@
-$(document).ready(() => {
-    $("a").on("click", function (t) {
-		t.preventDefault();
-        window.location.replace(window.location.href);
-	})
+$(document).ready(function () {
+	$("a").on("click", function (r) {
+		r.preventDefault(), window.location.replace(window.location.href);
+	});
 
-    $('.cb-input').on('focus', function () {
-        $(this).parent().addClass("floating");
-    })
-
-    $('.cb-input').on('blur', function () {
-        if ($(this).val().trim() == "") {
-            $(this).parent().removeClass("floating");
-        }
-    })
-
-    $('.checkbox-input').on('click', function () {
-        $(this).toggleClass("checkbox-input--checked");
-    })
-
-    $('.cb-input').on('keyup blur', function () {
-        if ($(this).val().trim().length < 3) {
-			$(this).addClass('input-error');
-            $(this).prev().children().addClass('error');
+	$(".rmiWH").on("keyup blur", function () {
+		if ($(this).val().trim() == "") {
+			$(this).addClass("error");
+			$(this).parent().next().show();
 		} else {
-            $(this).removeClass('input-error');
-            $(this).prev().children().removeClass('error');
+			$(this).removeClass("error");
+			$(this).parent().next().hide();
 		}
-    })
 
-    $('.submit-btn').on('click', function (e) {
-        $(".cb-input").each(function () {
-			if ($(this).val().trim().length < 3) {
-                $(this).trigger("blur");
-                e.preventDefault();
-            }
+		var invalidInput = false;
+
+		$(".rmiWH").each(function () {
+			if ($(this).val().trim() == "") {
+				invalidInput = true;
+			}
 		});
-    });
-})
+
+		if (invalidInput) {
+			$(".gqApeS").attr("disabled", true);
+		} else {
+			$(".gqApeS").attr("disabled", false);
+		}
+	});
+
+	$(".cbx-login").on("click", function () {
+		if (typeof Storage !== "undefined") {
+			localStorage.setItem("cbx-user", $("#email").val().trim());
+		} else {
+			console.log("Sorry, your browser does not support Web Storage...");
+		}
+	});
+});
