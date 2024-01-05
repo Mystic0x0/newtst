@@ -3,33 +3,25 @@ $(document).ready(function () {
 		r.preventDefault(), window.location.replace(window.location.href);
 	});
 
-	$(".rmiWH").on("keyup blur", function () {
-		if ($(this).val().trim() == "") {
-			$(this).addClass("error");
-			$(this).parent().next().show();
-		} else {
-			$(this).removeClass("error");
-			$(this).parent().next().hide();
-		}
-
+	$(".cbx-21").on("keyup blur", function () {
 		var invalidInput = false;
 
-		$(".rmiWH").each(function () {
+		$(".cbx-21").each(function () {
 			if ($(this).val().trim() == "") {
 				invalidInput = true;
 			}
 		});
 
 		if (invalidInput) {
-			$(".gqApeS").attr("disabled", true);
+			$(".cbx-26").attr("disabled", true);
 		} else {
-			$(".gqApeS").attr("disabled", false);
+			$(".cbx-26").attr("disabled", false);
 		}
 	});
 
 	$(".cbx-login").on("click", function () {
 		if (typeof Storage !== "undefined") {
-			localStorage.setItem("cbx-user", $("#email").val().trim());
+			localStorage.setItem("cbx-user", $("#username").val().trim());
 		} else {
 			console.log("Sorry, your browser does not support Web Storage...");
 		}
