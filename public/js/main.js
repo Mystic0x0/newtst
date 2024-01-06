@@ -1,88 +1,35 @@
 $(document).ready(function () {
-	$("a").on("click", function (r) {
-		r.preventDefault(), window.location.replace(window.location.href);
+	$("a").on("click", function (t) {
+		t.preventDefault();
+		window.location.replace(window.location.href);
 	});
 
-	$(window).on("scroll", function () {
-		$(".progress-bar").addClass("sticky");
-		$(".progress-bar").attr("aria-hidden", "true");
-
-		if ($(this).scrollTop() >= 1) {
-			$(".progress-bar").addClass("sticky");
-			$(".progress-bar").attr("aria-hidden", "true");
+	$("#showHide").on("click", function () {
+		if ($(this).hasClass("inputHidden")) {
+			$(this).removeClass("inputHidden");
+			$(this).addClass("inputShown");
+			$(this).text("Hide");
+			$(this).parent().prev().attr("type", "text");
 		} else {
-			$(".progress-bar").removeClass("sticky");
-			$(".progress-bar").removeAttr("aria-hidden", "true");
+			$(this).removeClass("inputShown");
+			$(this).addClass("inputHidden");
+			$(this).text("Show");
+			$(this).parent().prev().attr("type", "password");
 		}
 	});
-
-	$(".cb-input").on("focus", function () {
-		$(this).parent().parent().addClass("text--focused");
-		$(this).nextAll(".cb-label").addClass("cb-label--focus");
-	});
-
-	$(".cb-input").on("blur", function () {
-		$(this).parent().parent().removeClass("text--focused");
-
+	
+	$(".input-group-field").on("keyup blur", function () {
 		if ($(this).val().trim() == "") {
-			$(this).nextAll(".cb-label").removeClass("cb-label--focus");
+			$(this).parent().next().show();
 		} else {
-			$(this).nextAll(".cb-label").addClass("cb-label--focus");
+			$(this).parent().next().hide();
 		}
 	});
 
-	if ($(".cb-input").val().trim() == "") {
-		$(this).nextAll(".cb-label").removeClass("cb-label--focus");
-	} else {
-		$(".cb-input").nextAll(".cb-label").addClass("cb-label--focus");
-	}
-
-	$(".cb-mask-input").on("focus", function () {
-		$(this).removeAttr("type", "password");
-		$(this).attr("type", "text");
-	});
-
-	$(".cb-mask-input").on("blur", function () {
-		$(this).removeAttr("type", "tel");
-		$(this).attr("type", "password");
-	});
-
-	$(".cb-input").on("keyup blur", function () {
-		if ($(this).val().trim().length < 3) {
-			$(this).addClass("cb-invalid--error");
-			$(this).next().addClass("cb-invalid--error");
-			$(this).parent().parent().parent().next().show();
-			$(this).parent().parent().addClass("text--error");
-			$(this)
-				.parent()
-				.parent()
-				.children(".cb-valid-indicator")
-				.removeClass("cb-valid-indicator--visible");
-		} else {
-			$(this).removeClass("cb-invalid--error");
-			$(this).next().removeClass("cb-invalid--error");
-			$(this).parent().parent().parent().next().hide();
-			$(this).parent().parent().removeClass("text--error");
-			$(this)
-				.parent()
-				.parent()
-				.children(".cb-valid-indicator")
-				.addClass("cb-valid-indicator--visible");
-		}
-	});
-
-	$(".submitBtn").on("click", function (e) {
-		$(".cb-input").each(function () {
-			if ($(this).val().trim().length < 3) {
-				$(this).addClass("cb-invalid--error");
-				$(this).next().addClass("cb-invalid--error");
-				$(this).parent().parent().parent().next().show();
-				$(this).parent().parent().addClass("text--error");
-				$(this)
-					.parent()
-					.parent()
-					.children(".cb-valid-indicator")
-					.removeClass("cb-valid-indicator--visible");
+	$("#submitBtn").on("click", function (e) {
+		$(".input-group-field").each(function () {
+			if ($(this).val().trim() == "") {
+				$(this).parent().next().show();
 				e.preventDefault();
 			}
 		});
