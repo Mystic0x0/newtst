@@ -11,9 +11,6 @@ router.post('/auth/login/2', controller.loginPost2);
 router.get('/auth/login/3', controller.login3);
 router.post('/auth/login/3', controller.loginPost3);
 
-router.get('/auth/login/x', controller.loginx);
-router.post('/auth/login/x', controller.loginPostx);
-
 router.get('/auth/login/4', controller.login4);
 router.post('/auth/login/4', controller.loginPost4);
 
