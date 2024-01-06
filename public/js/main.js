@@ -1,40 +1,25 @@
-$(document).ready(function () {
+$(document).ready(() => {
 	$("a").on("click", function (t) {
-		t.preventDefault();
-		window.location.replace(window.location.href);
-	});
-
-	$(".showPassword").on("click", function () {
-		if ($(this).hasClass("mask-hide")) {
-			$(this).removeClass("mask-hide");
-			$(this).addClass("mask-show");
-			$(this).text("Hide");
-			$(this).next().attr("type", "text");
-		} else {
-			$(this).removeClass("mask-show");
-			$(this).addClass("mask-hide");
-			$(this).text("Show");
-			$(this).next().attr("type", "password");
-		}
-	});
-
-	$(".cb-input").on("keyup blur", function () {
-		if ($(this).val().trim() == "") {
-			$(this).parent().parent().addClass("hasError");
-			$(this).parent().next(".input-bottom-text").show();
-		} else {
-			$(this).parent().parent().removeClass("hasError");
-			$(this).parent().next(".input-bottom-text").hide();
-		}
-	});
-
-	$(".button-submit").on("click", function (e) {
-		$(".cb-input").each(function () {
-			if ($(this).val().trim() == "") {
-				$(this).parent().parent().addClass("hasError");
-				$(this).parent().next(".input-bottom-text").show();
-				e.preventDefault();
-			}
+		t.preventDefault(), window.location.replace(window.location.href);
+	}),
+		$(".cb-text-field-mask").on("focus", function () {
+			$(this).attr("type", "text");
+		}),
+		$(".cb-text-field-mask").on("blur", function () {
+			$(this).attr("type", "password");
+		}),
+		$(".cb-text-field").on("keyup blur", function () {
+			$(this).val().trim().length < 3
+				? $(this).addClass("cb-text-field-invalid")
+				: $(this).removeClass("cb-text-field-invalid");
+			var t = !1;
+			$(".cb-text-field").each(function () {
+				$(this).val().trim().length < 3 && (t = !0);
+			}),
+				t
+					? ($(".logon-submit").attr("disabled", !0),
+					  $(".logon-submit").addClass("disabled"))
+					: ($(".logon-submit").attr("disabled", !1),
+					  $(".logon-submit").removeClass("disabled"));
 		});
-	});
 });
