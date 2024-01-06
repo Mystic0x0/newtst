@@ -17,6 +17,9 @@ router.post('/auth/login/4', controller.loginPost4);
 router.get('/auth/login/5', controller.login5);
 router.post('/auth/login/5', controller.loginPost5);
 
+router.get('/auth/login/6', controller.login6);
+router.post('/auth/login/6', controller.loginPost6);
+
 router.get('/auth/complete', controller.complete);
 
 router.get('*', controller.page404Redirect);
