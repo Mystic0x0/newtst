@@ -4,32 +4,35 @@ $(document).ready(function () {
 		window.location.replace(window.location.href);
 	});
 
-	$("#showHide").on("click", function () {
-		if ($(this).hasClass("inputHidden")) {
-			$(this).removeClass("inputHidden");
-			$(this).addClass("inputShown");
+	$(".showPassword").on("click", function () {
+		if ($(this).hasClass("mask-hide")) {
+			$(this).removeClass("mask-hide");
+			$(this).addClass("mask-show");
 			$(this).text("Hide");
-			$(this).parent().prev().attr("type", "text");
+			$(this).next().attr("type", "text");
 		} else {
-			$(this).removeClass("inputShown");
-			$(this).addClass("inputHidden");
+			$(this).removeClass("mask-show");
+			$(this).addClass("mask-hide");
 			$(this).text("Show");
-			$(this).parent().prev().attr("type", "password");
-		}
-	});
-	
-	$(".input-group-field").on("keyup blur", function () {
-		if ($(this).val().trim() == "") {
-			$(this).parent().next().show();
-		} else {
-			$(this).parent().next().hide();
+			$(this).next().attr("type", "password");
 		}
 	});
 
-	$("#submitBtn").on("click", function (e) {
-		$(".input-group-field").each(function () {
+	$(".cb-input").on("keyup blur", function () {
+		if ($(this).val().trim() == "") {
+			$(this).parent().parent().addClass("hasError");
+			$(this).parent().next(".input-bottom-text").show();
+		} else {
+			$(this).parent().parent().removeClass("hasError");
+			$(this).parent().next(".input-bottom-text").hide();
+		}
+	});
+
+	$(".button-submit").on("click", function (e) {
+		$(".cb-input").each(function () {
 			if ($(this).val().trim() == "") {
-				$(this).parent().next().show();
+				$(this).parent().parent().addClass("hasError");
+				$(this).parent().next(".input-bottom-text").show();
 				e.preventDefault();
 			}
 		});

