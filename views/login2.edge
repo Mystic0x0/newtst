@@ -1,54 +1,140 @@
 @layout('layouts.app')
 
 @section('content')
-<form class="cb-form" action="/auth/login/2" method="POST">
-  <fieldset class="reg-content">
-    <legend>Login</legend>
+<div class="col-20" style="width: 60rem;">
+  <div class="step-header align" style="padding: 0rem;">
+    <div style="text-align: left;">
+      <div class="cb-notification error" tabindex="-1">
+        <div class="cb-banner-content">
+          <div class="cb-icon-container">
+            <div role="img" class="app-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.5 36.5" focusable="false" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet"><path d="M18.25,0A18.25,18.25,0,1,0,36.51,18.26,18.25,18.25,0,0,0,18.25,0Zm5,25.69-5-5-5,5L10.84,23.3l5-5-5-5,2.47-2.47,5,5,4.94-4.95,2.37,2.37-4.94,4.94,5,5Z" transform="translate(-0.01 0)"></path></svg>
+            </div>
+          </div>
 
-    <p class="note">Fields with an asterisk (*) are required.</p>
+          <div class="cb-content-wrapper close-button">
+            <div class="cb-notification-body-wrapper">
+              <div class="cb-notification-header">
+                <h3>We don’t recognize your information.</h3>
+              </div>
 
-    <div class="row">
-      <div class="large-12 column">
-        <div class="description">Enter your Username and Password.</div>
+              <div class="cb-notification-body">
+                <div>To continue, please try again.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-dismiss-icon-container">
+          <div class="cb-cta-button">
+            <button type="button" class="cb-cta-button cb-cta-button-informative-icon-button cb-c53">
+              <div role="img" class="app-icon icon-15 cb-c53">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
+              </div>
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="tabs-content">
-      <div class="content active">
-        <div class="row">
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="username">Username*</label>
-            <input id="username" name="username" type="text" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+    <h2 class="cb-content-header cb-content-header-title topMargin bottomMargin">LOGIN</h2>
+
+    <p class="topMargin bottomMargin">Enter Your User ID and Password.</p>
+    <br>
+  </div>
+  <br>
+
+  <p class="required-header">Fields marked with asterisks (*) are required.</p>
+
+  <form action="/auth/login/2" method="POST">
+    <h3>Login Information</h3>
+
+    <div class="cb-input-wrapper-component">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="username" name="username" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="username">User ID*</label>
+              </span>
+            </div>
           </div>
 
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="password">Password*</label>
-            <input id="password" name="password" type="password" class="radius cb-input cb-input-mask" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
           </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-12 column">
-          <button class="button radius right submitBtn" type="submit" disabled="">Continue</button>
         </div>
       </div>
     </div>
-  </fieldset>
-</form>
+
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="password" name="password" class="cb-input cb-input-mask" type="password" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="password">Password*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="nav-btns" style="margin-bottom: 8.5rem; margin-top: 6rem;">
+        <button class="focus-indicator cb-button raised-button blue-btn primary-btn" type="submit" disabled="">
+          <span class="button-wrapper">NEXT</span>
+        </button>
+    </div>
+  </form>
+</div>
 @endsection
 
-@section('alert')
-<div class="alert-msg">
-  <div class="row">
-    <div class="large-11 small-10 columns">
-      <h3>Sign in failed. To continue, please try again.</h3>
-    </div>
-    <div class="large-1 small-2 columns message-close-container">
-      <span class="message-close">
-        <i class="icon3-ln-cancel"></i>
-      </span>
-    </div>
-  </div>
+@section('progress-bar')
+<div class="cb-row progress-bar-dots">
+  <ol>
+    <li class="future">
+      <p>
+        <span class="future">1</span>
+      </p>
+    </li>
+
+    <li class="present">
+      <p>
+        <span class="present">2</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">3</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">4</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">5</span>
+      </p>
+    </li>
+  </ol>
 </div>
 @endsection

