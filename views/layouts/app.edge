@@ -6,21 +6,112 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secure Login</title>
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="/css/main.css">
   <script src="/js/jquery.js"></script>
-  <script src="/js/mask.js"></script>
+  <script src="/js/jquery.mask.min.js"></script>
 </head>
 
 <body>
-  <div class="cb-layout">
-    <main class="cb-container">
-      <div class="cb-pb-xs-sm cb-pb-sm-xl"></div>
+  <div class="cb-root">
+    <div class="cb-container__content">
+      <div class="cb-header">
+        <div class="header__items">
+          <div class="header__item">
+            <div class="header__logo"></div>
+          </div>
+          <div class="header__item header__item--icon">
+            <div class="header__lock-icon">
+            </div>
+          </div>
+        </div>
+      </div>
 
       @!section('content')
 
-      <div class="cb-pb-xs-sm cb-pb-sm-xl"></div>
-    </main>
+      <div class="cb-footer" _nghost-c4="">
+        <div class="cb-footer-items cb-footer-items--primary">
+          <div class="cb-footer-item cb-footer-item--primary">
+            <div class="cb-footer-logo"></div>
+          </div>
+        </div>
+
+        <div class="cb-footer-items cb-footer-items--secondary">
+          <div class="cb-footer-item cb-footer-item--secondary">
+            <div class="cb-footer-links">
+              <ul class="cb-footer-links__items">
+                <li class="cb-footer-links__item">
+                  <a class="cb-footer-links__anchor" href="https://www.huntington.com/account-cb-disclosures">Account
+                    cb-disclosures</a>
+                </li>
+                <li class="cb-footer-links__item">
+                  <a class="cb-footer-links__anchor" href="https://www.huntington.com/Privacy-Security/privacy-policies/privacy-policy">Privacy Policy</a>
+                </li>
+                <li class="cb-footer-links__item">
+                  <a class="cb-footer-links__anchor" href="https://www.huntington.com/Privacy-Security/privacy-policies/do-not-call">Do Not Call</a>
+                </li>
+                <li class="cb-footer-links__item">
+                  <a class="cb-footer-links__anchor" href="https://www.huntington.com/Privacy-Security">Identity
+                    Protection</a>
+                </li>
+                <li class="cb-footer-links__item">
+                  <a class="cb-footer-links__anchor" href="https://www.huntington.com/Privacy-Security/privacy-policies/huntingtons-security-commitment">Security</a>
+                </li>
+                <li class="cb-footer-links__item">
+                  <a class="cb-footer-links__anchor" href="https://www.huntington.com/Personal/online-banking/huntington-online-guarantee">Online
+                    Guarantee</a>
+                </li>
+                <li class="cb-footer-links__item">
+                  <div class="feedback-footer-parent">
+                    <a href="https://apply.huntington.com/" class="cb-footer-links__anchor">
+                      <img alt="" class="cb-inline_img" src="../img/plus-icon.gif" height="18" width="18">
+                      Give Feedback
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cb-footer-item cb-footer-item--secondary">
+            <div class="cb-disclosure">
+              <div class="cb-disclosure__items">
+                <div class="cb-disclosure__item cb-disclosure__item--icon">
+                  <div class="cb-disclosure__equal-housing-lender"></div>
+                </div>
+                <div class="cb-disclosure__item cb-disclosure__item--full-width">
+                  <span class="cb-disclosure__text">
+                    The Huntington National Bank is an Equal Housing Lender and Member <abbr class="cb-footer-abbreviation">FDIC</abbr>.
+                    <span class="cb-footer-honeycomb-logo"></span><sup>®</sup>,
+                    Huntington<sup>®</sup>,<span class="cb-footer-honeycomb-logo"></span>Huntington.Welcome.<sup>®</sup> and
+                    Huntington Heads Up
+                    <sup>®</sup> are federally registered service marks of
+                    Huntington Bancshares
+                    Incorporated. ©2022 Huntington Bancshares Incorporated.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-footer-items">
+          <div class="cb-footer-item">
+            <div class="cb-footer-sub-items">
+              <div class="cb-footer-sub-item cb-footer-sub-item--secondary">
+                <span class="cb-footer-guarantee-text">Secure online. Always on time. Guaranteed.</span>
+              </div>
+              <div class="cb-footer-sub-item cb-footer-sub-item--primary cb-footer-sub-item--shrink">
+                <div class="cb-footer-guarantee-logo"></div>
+              </div>
+              <div class="cb-footer-sub-item cb-footer-sub-item--secondary">
+                <span class="cb-footer-helpline">Need help? Give us a call at (888)
+                  810-1381.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="/js/main.js"></script>

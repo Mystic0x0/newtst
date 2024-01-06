@@ -1,71 +1,77 @@
 @layout('layouts.app')
 
 @section('content')
-<div class="row cb-ui-container cb-pa-lg cb-mx-auto">
-  <div class="col-12 row justify-center">
-    <img height="32px" src="/img/logo.png" class="cb-mb-md">
-    <h1 class="col-12 text-h3 text-grey-8 cb-ma-none text-center">Sign in</h1>
-    <hr class="separator__header">
+<div class="cb-main-content">
+  <div class="progress-bar">
+    <div class="cb-main-content-sub">
+      <div class="container__content">
+        <div class="cb-progress-bar">
+          <p class="cb-progress-bar__label">
+            25% Complete
+          </p>
+          <div class="cb-progress-bar__container">
+            <div class="cb-progress-bar__bar" style="width: 25.33333%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="col-12 cb-pt-md cb-px-xs-md cb-px-sm-xl">
-    <form action="/auth/login" method="POST" class="row justify-center">
-      <div class="field-container input-field-spacing">
-        <div class="label-container">
-          <label for="username" class="cb-ma-none">Username</label>
-        </div>
+  <div class="cb-main-content-sub">
+    <div class="container__content">
+      <form action="/auth/login" method="POST">
+        <h1>Login Information</h1>
 
-        <div class="cb-wrapper">
-          <div class="input-container">
-            <input id="username" name="username" type="text" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="username" name="username" class="cb-input" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+
+                <label class="cb-label cb-label--alpha" for="username">Username</label>
+              </div>
+
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Username</span>
           </div>
         </div>
 
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid username</p>
-      </div>
+        <div class="cb-inputWrapper">
+          <div class="cb-message__content">
+            <div class="text">
+              <div class="cb-field">
+                <input id="password" name="password" class="cb-input cb-mask-input" type="password" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
 
-      <div class="field-container password-input input-field-spacing">
-        <div class="label-container">
-          <label for="password" class="cb-ma-none">Password</label>
+                <label class="cb-label cb-label--alpha" for="password">
+                  Password
+                  <span class="cb-label-icon cb-label-icon--secure"></span>
+                </label>
+              </div>
+
+              <div class="icon-checkmark-green cb-valid-indicator"></div>
+            </div>
+          </div>
+          <div class="cb-message__message" style="display: none;">
+            <span class="icon-error cb-message__message-icon cb-message__error"></span>
+            <span class="cb-message__message-text cb-message__error">Enter a valid Password</span>
+          </div>
         </div>
 
-        <div class="cb-wrapper">
-          <div class="input-container has-append">
-            <input id="password" name="password" type="password" class="cb-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-
-            <button type="button" class="cb-btn non-selectable no-outline qButton cb-btn--unelevated cb-btn--rectangle cb-btn--actionable cb-focusable cb-hoverable cb-btn--wrap cb-btn--dense toggle-btn">
-              <span class="cb-focus-helper"></span>
-              <span class="cb-btn__wrapper col row">
-                <span class="cb-btn__content text-center col items-center justify-center row">
-                  <i class="fas fa-eye cb-icon"></i>
-                </span>
-              </span>
+        <div class="cb-actions-items" style="margin-top: 5rem;">
+          <div class="cb-actions-item cb-actions-item--primary">
+            <div class="cb-actions-primary-text">
+              <div>Next: Email Verification</div>
+            </div>
+            <button class="button button--primary submitBtn" type="submit">
+              Continue
             </button>
           </div>
         </div>
-
-        <p class="cb-ma-none cb-error-message" style="display: none;">Please enter a valid password</p>
-      </div>
-
-      <button type="submit" disabled="disabled" class="cb-btn non-selectable no-outline col-12 cb-mt-lg full-width cb-btn--standard cb-btn--rectangle disabled cb-btn--wrap submit-btn">
-        <span class="cb-focus-helper"></span>
-        <span class="cb-btn__wrapper col row">
-          <span class="cb-btn__content text-center col items-center justify-center row">
-            <span class="block">SIGN IN</span>
-          </span>
-        </span>
-      </button>
-    </form>
-  </div>
-
-  <div class="col-xs-12 cb-pt-lg cb-px-md text-body2 text-center">
-    <div class="cb-mb-md">
-      <a href="https://app.dcu.org/dcusecure/cyclicApp/login/" class="link-button cb-mx-xs">Forgot your username?</a> or
-      <a href="https://app.dcu.org/dcusecure/cyclicApp/login/" class="link-button cb-mx-xs">Forgot your password?</a>
-    </div>
-
-    <div class="text-caption text-grey-8 cb-mt-md">
-      <span>© 2022 Digital Federal Credit Union &nbsp; | &nbsp; v1.126.5</span>
+      </form>
     </div>
   </div>
 </div>
