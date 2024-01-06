@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-image: url('/img/bg.jpg');">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -12,36 +12,26 @@
   <script src="/js/jquery.mask.min.js"></script>
 </head>
 
-<body class="desktop cb-theme">
-  <div class="cb-app-container desktop">
-    <div class="container cb-meta-container main-page-container">
-      <div class="main-view grid-row">
-        <div class="cb-login-outer">
-          <div class="cb-login-inner">
-            <div class="cb-login-title">
-              <h1 class="ui-logo">
-                <div class="logo-image"></div>
-              </h1>
-            </div>
+<body>
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      @!section('alert')
 
+      <a href="https://www.creditonebank.com/auth/login/">
+        <header></header>
+      </a>
+
+      <main class="main-content-area section">
+        <div class="row">
+          <div class="large-12 columns">
             @!section('content')
-
-            <div class="cb-login-icons clearfix">
-              <a class="cb-login-adLink" href="https://account-opening.asbhawaii.com/workspaces/servlet/SmartForm.html?formCode=usdaops">Open an Account</a>
-
-              <a class="cb-login-adLink" href="https://online.asbhawaii.com/AmericanSavingsBankFSBAutoEnrollment/enroll.html">Enroll</a>
-
-              <a class="cb-login-adLink" href="https://online.asbhawaii.com/AmericanSavingsBankFSBOnline/uux.aspx#/branches">Locations</a>
-            </div>
-
-            <div style="margin-top: 45px;">
-              <a href="/img/footer-large.jpg">
-                <img src="/img/footer-small.png">
-              </a>
-            </div>
           </div>
         </div>
-      </div>
+      </main>
+
+      <a href="https://www.creditonebank.com/auth/login/">
+        <footer></footer>
+      </a>
     </div>
   </div>
 
